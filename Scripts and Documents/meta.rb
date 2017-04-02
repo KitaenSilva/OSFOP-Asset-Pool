@@ -1,59 +1,36 @@
-SWPO = Win32API.new 'user32', 'SetWindowPos', ['l','i','i','i','i','i','p'], 'i'
-WINX = Win32API.new 'user32', 'FindWindowEx', ['l','l','p','p'], 'i'
-SMET = Win32API.new 'user32', 'GetSystemMetrics', ['i'], 'i'
-GWRF = Win32API.new 'user32', 'GetWindowRect', ['i','p'], 'i'
-MOVW = Win32API.new 'user32', 'MoveWindow', ['l','i','i','i','i','i'], 'i'
-
-SELF_WINDOW = WINX.call(0,0,"RGSS Player",0)
-# SELF_WINDOW = WINX.call(0,0,0,"Start Command Prompt With Ruby - irb")
-
-RECT = [0,0,0,0]
-
 class Meta
     def self.query(querytext, caps = false)
-        createwindow = Win32API.new("user32","CreateWindowEx",'lpplllllllll','l')
-        showwindow   = Win32API.new('user32','ShowWindow',%w(l l),'l')
-
-        ew = createwindow.call((0x00000100|0x00000200),"Edit", "",((0x00800000)),10,520,250,250,0,0,0,0)
-        showwindow.call(ew, 1)
-
-        msgbox querytext
-
-        getWindowText       = Win32API.new( 'user32', 'GetWindowText', 'LPI', 'I')
-        getWindowTextLength = Win32API.new('user32', 'GetWindowTextLength', 'L', 'I')
-        showwindow.call(ew , 0)
-        buf_len = getWindowTextLength.call(ew)
-        str = ' ' * (buf_len + 1)
-        # Retreive the text.
-        getWindowText.call(ew , str, str.length)
-        str = str.delete("\000")
-        if caps 
-            str.upcase!
+        if $OS == 0
+            return WIN.query(querytext, caps)
+        elsif $OS == 1
+            return OSX.query(querytext, caps)
+        elsif $OS == 2
+            return LINUX.query(querytext, caps)
+        else
+            raise $OS
         end
-        return str
     end
     def self.move(dx,dy)
-        resw = SMET.call(0)
-        resh = SMET.call(1)
-        width = 544 + ((SMET.call(5) + SMET.call(45)) * 2)
-        height = (SMET.call(6) + SMET.call(45)) * 2 + SMET.call(4) + 416
-        p = self.getwpos
-        x = p[0]-8; y = p[1]-8
-        y = 0 if y < 0;x = 0 if x < 0
-        MOVW.call(SELF_WINDOW,x+dx,y+dy,width,height,0)
+        if $OS == 0
+            WIN.move(dx,dy)
+        elsif $OS == 1
+            OSX.move(dx,dy)
+        elsif $OS == 2
+            LINUX.move(dx,dy)
+        else
+            raise $OS
+        end
     end
     def self.movetocoords(x,y)
-        width = 544 + ((SMET.call(5) + SMET.call(45)) * 2)
-        height = (SMET.call(6) + SMET.call(45)) * 2 + SMET.call(4) + 416
-        MOVW.call(SELF_WINDOW,x-8,y-8,width,height,0)
-    end
-    def self.getwpos
-        r = RECT.pack("llll")
-        GWRF.call(SELF_WINDOW,r)
-        full = r.unpack("llll")
-        full[0] = full[0] + 8
-        full[1] = full[1] + 8
-        full[0,2]
+        if $OS == 0
+            WIN.movetocoords(x,y)
+        elsif $OS == 1
+            OSX.movetocoords(x,y)
+        elsif $OS == 2
+            LINUX.movetocoords(x,y)
+        else
+            raise $OS
+        end
     end
     def self.ree(amount)
         amount.times do |i|
