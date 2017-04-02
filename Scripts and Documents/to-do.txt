@@ -1,0 +1,29 @@
+During Kit encounter, add hint to go look around to find access to Glen Lake.
+
+Comment on floor switches in Glen: "It looks like a toaster?"
+
+Since I don't have clues in place yet, here's one:
+
+"In order to deter theft, we've implemented an nine-stage mechanical lock. We have yet to move the treasury into the new vault, but testing of the lock has gone well."
+
+And here's another:
+
+"The lock's stages are connected in a linear fashion - each stage can only be interacted with by completing the stage before it."
+
+And another:
+
+"The switches in the north enable the switches in the south, but east activates west and west activates east."
+
+And one more:
+
+"The green stage is the last one, but we keep it in a high-traffic area so that at least someone will see it if someone unauthorized is trying to get into the treasury."
+
+missing "move" audio when going back through tunnel out of glen lake
+
+Alula doesn't comment on the Messiah knowing her name
+
+Add condition for interacting with pickaxe AFTER interacting with minable obstacle.
+
+There is a delay preventing movement in Map 1?
+
+Extra keypresses on first Entity dialogue.
