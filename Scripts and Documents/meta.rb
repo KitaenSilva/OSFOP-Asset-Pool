@@ -10,7 +10,7 @@ SELF_WINDOW = WINX.call(0,0,"RGSS Player",0)
 RECT = [0,0,0,0]
 
 class Meta
-    def self.query(querytext)
+    def self.query(querytext, caps = false)
         createwindow = Win32API.new("user32","CreateWindowEx",'lpplllllllll','l')
         showwindow   = Win32API.new('user32','ShowWindow',%w(l l),'l')
 
@@ -26,7 +26,11 @@ class Meta
         str = ' ' * (buf_len + 1)
         # Retreive the text.
         getWindowText.call(ew , str, str.length)
-        return str.delete("\000")
+        str = str.delete("\000")
+        if caps 
+            str.upcase!
+        end
+        return str
     end
     def self.move(dx,dy)
         resw = SMET.call(0)
