@@ -1,3 +1,20 @@
+wintest = `ver`
+wintest.downcase!
+lintest = `uname -o`
+lintest.downcase!
+osxtest = `sw_vers`
+osxtest.downcase!
+if wintest.include? "windows"
+    $OS = 0
+elsif lintext.include? "linux"
+    $OS = 2
+elsif osxtest.include? "mac os x"
+    $OS = 1
+else
+    $OS = -1
+end
+
+
 class Meta
     def self.query(querytext, caps = false)
         if $OS == 0
