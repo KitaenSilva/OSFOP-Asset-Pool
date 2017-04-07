@@ -91,18 +91,18 @@ class Meta
         response = http.request(request)
         if response != nil {
             res = JSON.parse(response.body)
-            if res["status"] == "success" {
-                if res["country"] == "United States" {
+            if res["status"] == "success" 
+                if res["country"] == "United States" 
                     $game_actors[9] = res["regionName"]
-                } else {
+                else 
                     $game_actors[9] = res["country"]
-                }
-            } else {
+                end
+            else 
                 $game_actors[9] = "earth"
-            }
-        } else {
+            end
+        else 
             $game_actors[9] = "earth"
-        }
+        end
     end
 end
 
