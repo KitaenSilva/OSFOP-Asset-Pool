@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DBox</title>
+    <script src="jquery-1.10.1.min.js"></script>
+</head>
+<body>
+<script>
+    (function (window, $) {
+        $(function () {
+            $('#P').on('click', function (event) {
+                pre()
+            });
+
+            $('#C').on('click', function (event) {
+                Comp()
+            });
+
+            function gettext() {
+                return $('textarea#Text').val()
+            }
+
+            function pre() {
+
+                $.ajax({
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "http://localhost:9001/p/",
+                    "method": "POST",
+                    "data": {
+                        "text": gettext(),
+                        "action": "preview"
+                    }
+                }).done(function (response) {
+                    console.log(response);
+                });
+            }
+            
+            function Comp() {
+                $.ajax({
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "http://localhost:9001/p/",
+                    "method": "POST",
+                    "data": {
+                        "text": gettext(),
+                        "action": "compile"
+                    }
+                }).done(function (response) {
+                    $('#Comp').html(response);
+                    $('#Comp').css("visibility", "visible")
+                });
+            }
+        });
+    })(window, jQuery);
+</script>
+<div align="center" style="margin-top: 10%">
+    <textarea id="Text" name="Text" cols="40" rows="5"></textarea><br>
+    <!-- <button id="P" type="button">Center</button> -->
+    <button id="C" type="button">Compile</button>
+    <br><br>
+    <textarea id="Comp" disabled style="visibility: hidden"></textarea>
+</div>
+</body>
+</html>

@@ -15,16 +15,16 @@ class WIN
     def self.move(dx, dy)
         resw = SMET.call(0)
         resh = SMET.call(1)
-        width = 544 + ((SMET.call(5) + SMET.call(45)) * 2)
-        height = (SMET.call(6) + SMET.call(45)) * 2 + SMET.call(4) + 416
+        width = Graphics.width + ((SMET.call(5) + SMET.call(45)) * 2)
+        height = (SMET.call(6) + SMET.call(45)) * 2 + SMET.call(4) + Graphics.height
         p = self.getwpos
         x = p[0]-8; y = p[1]-8
         y = 0 if y < 0;x = 0 if x < 0
         MOVW.call(SELF_WINDOW,x+dx,y+dy,width,height,0)
     end
     def self.movetocoords(x,y)
-        width = 544 + ((SMET.call(5) + SMET.call(45)) * 2)
-        height = (SMET.call(6) + SMET.call(45)) * 2 + SMET.call(4) + 416
+        width = Graphics.width + ((SMET.call(5) + SMET.call(45)) * 2)
+        height = (SMET.call(6) + SMET.call(45)) * 2 + SMET.call(4) + Graphics.height
         MOVW.call(SELF_WINDOW,x-8,y-8,width,height,0)
     end
     def self.getwpos

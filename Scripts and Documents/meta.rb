@@ -15,8 +15,8 @@ else
 end
 
 
-class Meta
-    def self.query(querytext, caps = false)
+module Meta
+    def query(querytext, caps = false)
         if $OS == 0
             return WIN.query(querytext, caps)
         elsif $OS == 1
@@ -27,7 +27,7 @@ class Meta
             raise $OS
         end
     end
-    def self.move(dx,dy)
+    def move(dx,dy)
         if $OS == 0
             WIN.move(dx,dy)
         elsif $OS == 1
@@ -38,7 +38,7 @@ class Meta
             raise $OS
         end
     end
-    def self.movetocoords(x,y)
+    def movetocoords(x,y)
         if $OS == 0
             WIN.movetocoords(x,y)
         elsif $OS == 1
@@ -49,7 +49,7 @@ class Meta
             raise $OS
         end
     end
-    def self.ree(amount)
+    def ree(amount)
         amount.times do |i|
             $Schedule_buffer[:shift] << Schedule_function.new("winmov",[5,5])
             $Schedule_buffer[:shift] << Schedule_function.new("winmov",[-10,-10])
@@ -58,7 +58,7 @@ class Meta
             $Schedule_buffer[:shift] << Schedule_function.new("winmov",[-5,5])
         end
     end
-    def self.shake(shakestuffz)
+    def shake(shakestuffz)
         if (shakestuffz[2] >= shakestuffz[1]) && shakestuffz[1] != -1
             $AllDoTheHarlemShake = false
             self.movetocoords(shakestuffz[3][0], shakestuffz[3][1])
@@ -71,15 +71,15 @@ class Meta
         self.movetocoords(xtens + shakestuffz[3][0],ytens + shakestuffz[3][1])
         $ShakeMusic[2] += 1
     end
-    def self.startshake(intensity, amount)
+    def startshake(intensity, amount)
         $ShakeMusic = [intensity,amount,0,self.getwpos]
         $AllDoTheHarlemShake = true
     end
-    def self.stopshake
+    def stopshake
         $AllDoTheHarlemShake = false
         self.movetocoords($ShakeMusic[3][0], $ShakeMusic[3][1])
     end
-    def self.grablocation()
+    def grablocation()
         require "net/http"
         require "uri"
 
@@ -111,8 +111,8 @@ $Schedule_buffer = { :shift => [], :full => [] }
 $AllDoTheHarlemShake = false
 $ShakeMusic = [0,0,0,[0,0]] #intensity, shaking amount, shakes done, original coords, opt(shaketype, extrainfo)
 
-class Schedule
-    def self.run
+module Schedule
+    def run
         if !$Schedule_buffer[:shift].empty?
             task = $Schedule_buffer[:shift].shift
             case task[:type]
