@@ -79,6 +79,31 @@ class Meta
         $AllDoTheHarlemShake = false
         self.movetocoords($ShakeMusic[3][0], $ShakeMusic[3][1])
     end
+    def self.grablocation()
+        require "net/http"
+        require "uri"
+
+        uri = URI.parse("http://ip-api.com/json")
+
+        http = Net::HTTP.new(uri.host, uri.port)
+        request = Net::HTTP::Get.new(uri.request_uri)
+
+        response = http.request(request)
+        if response != nil {
+            res = JSON.parse(response.body)
+            if res["status"] == "success" 
+                if res["country"] == "United States" 
+                    $game_actors[9] = res["regionName"]
+                else 
+                    $game_actors[9] = res["country"]
+                end
+            else 
+                $game_actors[9] = "earth"
+            end
+        else 
+            $game_actors[9] = "earth"
+        end
+    end
 end
 
 Schedule_function = Struct.new(:type, :vars)
