@@ -89,7 +89,7 @@ module Meta
         request = Net::HTTP::Get.new(uri.request_uri)
 
         response = http.request(request)
-        if response != nil {
+        if response != nil 
             res = JSON.parse(response.body)
             if res["status"] == "success" 
                 if res["country"] == "United States" 
