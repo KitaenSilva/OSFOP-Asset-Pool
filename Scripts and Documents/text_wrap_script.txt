@@ -1,0 +1,53 @@
+#Rudimentary Text Wrap v1.0
+#----------#
+#
+#Features: Text Wrap. Probably. No customization required.
+#
+#~ #----------#
+#-- Script by: V.M of D.T
+#
+#- Questions or comments can be:
+#    given by email: sumptuaryspade@live.ca
+#    provided on facebook: http://www.facebook.com/DaimoniousTailsGames
+#   All my other scripts and projects can be found here: http://daimonioustails.weebly.com/
+#
+#--- Free to use in any project, commercial or non-commercial, with credit given
+# - - Though a donation's always a nice way to say thank you~ (I also accept actual thank you's)
+ 
+class Window_Base
+  def draw_text_ex(x, y, text)
+    reset_font_settings
+    text = convert_escape_characters(text)
+    pos = {:x => x, :y => y, :new_x => x, :height => calc_line_height(text)}
+    words = text.split
+    words.each {|word| process_word(text,word,pos)}
+  end
+  def process_word(text, word, pos)
+    text_width = text_size(word).width
+    index = text.index(word) + word.size + 1
+    process_new_line(text, pos) if pos[:x] + text_width > contents.width
+    process_character(word.slice!(0,1), word, pos) until word.empty?
+    process_character(' ',' ',pos)
+  end
+  alias cec_tw convert_escape_characters
+  def convert_escape_characters(text)
+    result = cec_tw(text)
+    result.gsub!("\n") { "Å˜" }
+    result
+  end
+  alias pc_tw process_character
+  def process_character(c, text, pos)
+    c == "Å˜" ? process_new_line(text, pos) : pc_tw(c,text,pos)
+  end
+end
+ 
+class Window_Message
+  def process_all_text
+    open_and_wait
+    text = convert_escape_characters($game_message.all_text)
+    pos = {}
+    new_page(text, pos)
+    words = text.split
+    words.each {|word| process_word(text, word, pos) }
+  end
+end
