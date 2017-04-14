@@ -1,0 +1,264 @@
+#:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+# Zer0 Advanced Title 
+# Author: ForeverZer0
+# Version: 2.0
+# Date: 10.03.2010
+#:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+# Version History
+#:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+#  Version 1.0 (3.14.2010)
+#  - Original write
+# 
+#  Version 1.1 (3.18.2010)
+#  - Fixed a bug that would crash the game if you tried to return to the Title
+#    Screen from the load screen when using the Load Transition.
+#
+#  Version 1.2 (3.21.2010)
+#  - Added a part to pre-cache all the bitmaps before the animation begins,
+#    which should drastically reduce the possibility of lagging.
+#
+#  Version 2.0 (10.03.2010)
+#  - Totally re-written from scratch.
+#  - Eliminated the unprofessional 'flicker' that would occur if the database 
+#    had an image defined for the title graphic.
+#  - Improved performance, compatibility, overview, and configurability.
+#  - Added Features:
+#     - More options to how animations operate, with easier configuration.
+#     - Added scene linker to easily add new commands to the title window.
+#     - Added config to work with custom save systems.
+#     - Add option to display text on the background.
+#     - Window appearance can now be easily changed.
+#
+#:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+#
+# Compatibility:
+#   - Should be compatible with just about anything other than scripts that 
+#     add animation, etc. to the Title screen
+#   - Compatible with SDK
+#
+# Explanation:
+#   This system will allow you alter the title screen and add some different
+#   effects that are not normally available.
+#
+# Features:
+#   - Animated Title
+#   - Easy display of picture on screen and/or over animation
+#   - Random Title Screen each load
+#   - Transition Effect on loading saved games
+#   - Weather/Fog Effects
+#   - BGS and SFX
+#   - Window configuration.
+#
+# Instructions:
+#  - All the below configurable values can be set to nil to disable the feature
+#    with the exception of SAVE_DATA. It is already configured to the default
+#    system so leave it alone if you are not using a custom save system.
+#  - If using the animated title, all pictures need to be named exactly the
+#    the same, but have a different number at the end. The numbers should be
+#    consecutive and in the order that the animation should follow. The first
+#    image should be 0. (Ex. pic0, pic1, pic2, pic3, etc.)
+#  - Configuration is below. Individual explanation for the settings is in 
+#    their respective sections. All Graphics, Fogs, SFX, BGS, etc. that you use
+#    need to be in their normal folders.
+#
+#:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+
+  $zer0_adv_title = 2.0
+
+#===============================================================================
+# ** Scene_Title
+#===============================================================================
+
+class Scene_Title
+#=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=# )--------------------------------------------------(
+# )--     Author:     Mr Trivel                    --(
+# )--     Name:       Thirst System                --(
+# )--     Created:    2014-06-08                   --(
+# )--     Version:    1.1                          --(
+# )--------------------------------------------------(
+# )-- v1.1 - Negative Quench values can now be used--(
+# )--        to make the person more thirsty.      --(
+# )--------------------------------------------------(
+# )--     Requires:   None                         --(
+# )--------------------------------------------------(
+# )--             Description                      --(
+# )--  Your Actors can now be thirsty! At 0 thirst --(
+# )--  value they will start losing hp.            --(
+# )--------------------------------------------------(
+# )--             Instructions                     --(
+# )--  Use <Quench: X> in Consumable Item's Note   --(
+# )--  tags to restore X% of the thirst.           --(
+# )--------------------------------------------------(
+# )--  Thanks to TheoAllen for helping with item   --(
+# )--  targets.                                    --(
+# )--------------------------------------------------(
+# )--             LICENSE INFO                     --(
+# )--http://mrtrivelvx.wordpress.com/terms-of-use/ --(
+# )--------------------------------------------------(
+ 
+module MrTS
+  module Thirst
+    LEVELS = {
+    # )--------------------------------------------------(
+    # )--  Thirst levels that will be shown on menu    --(
+    # )--  If thirst >= X, that's what gonna be written--(
+    # )--  X - 0..100                                  --(
+    # )--------------------------------------------------(
+    # )--     X  => "Text"                             --(
+    # )--------------------------------------------------(
+              65 => "Quenched",
+              30 => "Thirsty",
+              1  => "Dehydrated",
+              0  => "Dying"
+    # )--------------------------------------------------(
+             }
+    # )--------------------------------------------------(
+    # )--  Actors will start with this thirst value.   --(
+    # )--  Default: 70, meaning they will be 70% full. --(
+    # )--------------------------------------------------(
+    DEFAULT_THIRST = 70
+   
+    # )--------------------------------------------------(
+    # )--  Lose 1 thirst value each Xth turn.          --(
+    # )--------------------------------------------------(
+    LOSE_THIRST_PER = 7
+   
+    # )--------------------------------------------------(
+    # )--  If Actor can't lose another thirst point,   --(
+    # )--  it will take damage instead. This denotes   --(
+    # )--  how much damage the Actor will take.        --(
+    # )--------------------------------------------------(
+    THIRST_DAMAGE = 25
+  end
+end
+ 
+# )--------------------------------------------------(
+$imported = {} if $imported.nil?  #                --(
+$imported["MrTS_Thirst"] = true   #                --(
+# )--------------------------------------------------(
+ 
+# )----------------------------------------(
+# )--  Class: Game_Actor < Game_Battler  --(
+# )----------------------------------------(
+class Game_Actor < Game_Battler
+ 
+  # )-------------------------------(
+  # )--  Public access variables  --(
+  # )-------------------------------(
+  attr_accessor     :thirst
+ 
+  # )-----------------------(
+  # )--  Alias to: setup  --(
+  # )-----------------------(
+  alias mrts_ga_setup setup
+  def setup(*args)
+    mrts_ga_setup(*args)
+    @thirst = MrTS::Thirst::DEFAULT_THIRST
+  end
+ 
+  # )------------------------------------(
+  # )--  New Method: get_thirst_level  --(
+  # )------------------------------------(
+  def get_thirst_level
+    MrTS::Thirst::LEVELS.each do |val, txt|
+      if @thirst >= val
+        return txt
+      end
+    end
+    return ""
+  end
+ 
+  # )-------------------------------(
+  # )--  New Method: lose_thirst  --(
+  # )-------------------------------(
+  def lose_thirst
+    if @thirst >= 1
+      @thirst -= 1
+    elsif @thirst <= 0
+      self.hp -= MrTS::Thirst::THIRST_DAMAGE
+    end
+  end
+ 
+  # )----------------------------(
+  # )--  Alias to: item_apply  --(
+  # )----------------------------(
+  alias mrts_item_apply item_apply
+  def item_apply(user, item)
+    mrts_item_apply(user, item)
+    item.note[/<[q-qQ-Q]uench:\s*(-*\d*)>/]
+    if $1
+      self.thirst += $1.to_i
+      self.thirst = 100 if self.thirst > 100
+      self.thirst = 0 if self.thirst < 0
+    end
+  end
+ 
+  # )-----------------------------------(
+  # )--  Overwrite Method: item_test  --(
+  # )-----------------------------------(
+  def item_test(user, item)
+    item.note[/<[q-qQ-Q]uench:\s*(-*\d*)>/]
+ 
+    return false if item.for_dead_friend? != dead?
+    return true if $game_party.in_battle
+    return true if item.for_opponent?
+    return true if item.damage.recover? && item.damage.to_hp? && hp < mhp
+    return true if item.damage.recover? && item.damage.to_mp? && mp < mmp
+    return true if item_has_any_valid_effects?(user, item)
+    return true if $1
+   
+    return false
+  end
+ 
+end
+ 
+# )----------------------------------------------------(
+# )--  Class: Window_MenuStatus < Window_Selectable  --(
+# )----------------------------------------------------(
+class Window_MenuStatus < Window_Selectable
+ 
+  # )-----------------------------------(
+  # )--  Overwrite Method: draw_item  --(
+  # )-----------------------------------(
+  def draw_item(index)
+    actor = $game_party.members[index]
+    enabled = $game_party.battle_members.include?(actor)
+    rect = item_rect(index)
+    rect.y -= line_height/2
+    draw_item_background(index)
+    draw_actor_face(actor, rect.x + 1, rect.y + 1 + line_height/2, enabled)
+    draw_actor_simple_status(actor, rect.x + 108, rect.y + line_height / 2)
+    draw_thirst_gauge(actor, rect.x + 108 + 120, rect.y + line_height * 3 + line_height/2)
+  end
+end
+ 
+# )--------------------------(
+# )--  Class: Window_Base  --(
+# )--------------------------(
+class Window_Base
+ 
+  # )-------------------------------------(
+  # )--  New Method: draw_thirst_gauge  --(
+  # )-------------------------------------(
+  def draw_thirst_gauge(actor, x, y, width=124, height=line_height)
+    draw_gauge(x, y, width, actor.thirst.to_f/100.0, text_color(16), text_color(23) )
+    draw_text(x, y, width, line_height, actor.get_thirst_level)
+  end
+end
+ 
+# )-------------------------------------------(
+# )--  Class: Game_Player < Game_Character  --(
+# )-------------------------------------------(
+class Game_Player < Game_Character
+ 
+  # )--------------------------------(
+  # )--  Alias to: increase_steps  --(
+  # )--------------------------------(
+  alias mrts_gp_increase_steps increase_steps
+  def increase_steps
+    mrts_gp_increase_steps
+    if $game_party.steps % MrTS::Thirst::LOSE_THIRST_PER == 0
+      $game_party.all_members.each { |actor| actor.lose_thirst }
+    end
+  end
+end
