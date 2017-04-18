@@ -1,10 +1,10 @@
 ﻿#==============================================================================
-# 
+#
 # ▼ Yanfly Engine Ace - Ace Message System v1.05
 # -- Last Updated: 2012.01.13
 # -- Level: Normal
 # -- Requires: n/a
-# 
+#
 #==============================================================================
 
 $imported = {} if $imported.nil?
@@ -20,7 +20,7 @@ $imported["YEA-MessageSystem"] = true
 # 2012.01.04 - Bug Fixed: \ic tag was \ii. No longer the case.
 #            - Added: Scroll Text window now uses message window font.
 # 2011.12.31 - Started Script and Finished.
-# 
+#
 #==============================================================================
 # ▼ Introduction
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -30,13 +30,13 @@ $imported["YEA-MessageSystem"] = true
 # more in quicker fashion. This script also gives the developer the ability to
 # adjust the size of the message window during the game, give it a separate
 # font, and to give the player a text fast-forward feature.
-# 
+#
 #==============================================================================
 # ▼ Instructions
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # To install this script, open up your script editor and copy/paste this script
 # to an open slot below ▼ Materials/素材 but above ▼ Main. Remember to save.
-# 
+#
 # -----------------------------------------------------------------------------
 # Message Window text Codes - These go inside of your message window.
 # -----------------------------------------------------------------------------
@@ -57,40 +57,40 @@ $imported["YEA-MessageSystem"] = true
 #    \<        - Following text is no longer instant.
 #    \^        - Skips to the next message.
 #    \\        - Writes a "\" in the window.
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 #  Wait:       Effect:
 #    \w[x]     - Waits x frames (60 frames = 1 second). Message window only.
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 #  NameWindow: Effect:
 #    \n<x>     - Creates a name box with x string. Left side. *Note
 #    \nc<x>    - Creates a name box with x string. Centered. *Note
 #    \nr<x>    - Creates a name box with x string. Right side. *Note
-# 
+#
 #              *Note: Works for message window only.
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 #  Position:   Effect:
 #    \px[x]    - Sets x position of text to x.
 #    \py[x]    - Sets y position of text to y.
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 #  Picture:    Effect:
 #    \pic[x]   - Draws picture x from the Graphics\Pictures folder.
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 #  Outline:    Effect:
 #    \oc[x]    - Sets outline colour to x.
 #    \oo[x]    - Sets outline opacity to x.
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 #  Font:       Effect:
 #    \fr       - Resets all font changes.
 #    \fz[x]    - Changes font size to x.
@@ -99,23 +99,23 @@ $imported["YEA-MessageSystem"] = true
 #    \fi       - Toggles font italic.
 #    \fo       - Toggles font outline.
 #    \fs       - Toggles font shadow.
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 #  Actor:      Effect:
 #    \af[x]    - Shows face of actor x. *Note
 #    \ac[x]    - Writes out actor's class name. *Note
 #    \as[x]    - Writes out actor's subclass name. Req: Class System. *Note
 #    \an[x]    - Writes out actor's nickname. *Note
-# 
+#
 #              *Note: If x is 0 or negative, it will show the respective
 #               party member's face instead.
 #                   0 - Party Leader
 #                  -1 - 1st non-leader member.
 #                  -2 - 2nd non-leader member. So on.
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 #  Names:      Effect:
 #    \nc[x]    - Writes out class x's name.
 #    \ni[x]    - Writes out item x's name.
@@ -123,9 +123,9 @@ $imported["YEA-MessageSystem"] = true
 #    \na[x]    - Writes out armour x's name.
 #    \ns[x]    - Writes out skill x's name.
 #    \nt[x]    - Writes out state x's name.
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 #  Icon Names: Effect:
 #    \ic[x]    - Writes out class x's name including icon. *
 #    \ii[x]    - Writes out item x's name including icon.
@@ -133,26 +133,26 @@ $imported["YEA-MessageSystem"] = true
 #    \ia[x]    - Writes out armour x's name including icon.
 #    \is[x]    - Writes out skill x's name including icon.
 #    \it[x]    - Writes out state x's name including icon.
-# 
+#
 #              *Note: Requires YEA - Class System
-# 
+#
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# 
+#
 # And those are the text codes added with this script. Keep in mind that some
 # of these text codes only work for the Message Window. Otherwise, they'll work
 # for help descriptions, actor biographies, and others.
-# 
+#
 #==============================================================================
 # ▼ Compatibility
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # This script is made strictly for RPG Maker VX Ace. It is highly unlikely that
 # it will run with RPG Maker VX without adjusting.
-# 
+#
 #==============================================================================
 
 module YEA
   module MESSAGE
-    
+
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     # - General Message Settings -
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -163,22 +163,22 @@ module YEA
     # forward. Hold down for the effect. Note that when held down, this will
     # speed up the messages, but still wait for the pauses. However, it will
     # automatically go to the next page when prompted.
-    TEXT_SKIP = :A     # Input::A is the shift button on keyboard.
-    
+    TEXT_SKIP = :A # Input::A is the shift button on keyboard.
+
     # This variable adjusts the number of visible rows shown in the message
     # window. If you do not wish to use this feature, set this constant to 0.
     # If the row value is 0 or below, it will automatically default to 4 rows.
     VARIABLE_ROWS  = 21
-    
+
     # This variable adjusts the width of the message window shown. If you do
     # not wish to use this feature, set this constant to 0. If the width value
     # is 0 or below, it will automatically default to the screen width.
     VARIABLE_WIDTH = 22
-    
+
     # This is the amount of space that the message window will indent whenever
     # a face is used. Default: 112
     FACE_INDENT_X = 112
-    
+
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     # - Name Window Settings -
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -190,7 +190,7 @@ module YEA
     NAME_WINDOW_PADDING  = 20      # Padding added to the horizontal position.
     NAME_WINDOW_OPACITY  = 255     # Opacity of the name window.
     NAME_WINDOW_COLOUR   = 6       # Text colour used by default for names.
-    
+
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     # - Message Font Settings -
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -201,7 +201,7 @@ module YEA
     # exist on the player's computer, the next font in question will be used
     # in place instead and so on.
     MESSAGE_WINDOW_FONT_NAME = ["Verdana", "Arial", "Courier New"]
-    
+
     # These adjust the other settings regarding the way the game font appears
     # including the font size, whether or not the font is bolded by default,
     # italic by default, etc.
@@ -210,7 +210,7 @@ module YEA
     MESSAGE_WINDOW_FONT_ITALIC  = false    # Default italic?
     MESSAGE_WINDOW_FONT_OUTLINE = true     # Default outline?
     MESSAGE_WINDOW_FONT_SHADOW  = false    # Default shadow?
-    
+
   end # MESSAGE
 end # YEA
 
@@ -225,7 +225,7 @@ end # YEA
 #==============================================================================
 
 module Variable
-  
+
   #--------------------------------------------------------------------------
   # self.message_rows
   #--------------------------------------------------------------------------
@@ -234,7 +234,7 @@ module Variable
     return 4 if $game_variables[YEA::MESSAGE::VARIABLE_ROWS] <= 0
     return $game_variables[YEA::MESSAGE::VARIABLE_ROWS]
   end
-  
+
   #--------------------------------------------------------------------------
   # self.message_width
   #--------------------------------------------------------------------------
@@ -243,7 +243,7 @@ module Variable
     return Graphics.width if $game_variables[YEA::MESSAGE::VARIABLE_WIDTH] <= 0
     return $game_variables[YEA::MESSAGE::VARIABLE_WIDTH]
   end
-  
+
 end # Variable
 
 #==============================================================================
@@ -251,7 +251,7 @@ end # Variable
 #==============================================================================
 
 class Game_Interpreter
-  
+
   #--------------------------------------------------------------------------
   # overwrite method: command_101
   #--------------------------------------------------------------------------
@@ -281,7 +281,7 @@ class Game_Interpreter
     end
     wait_for_message
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: continue_message_string?
   #--------------------------------------------------------------------------
@@ -289,7 +289,7 @@ class Game_Interpreter
     return true if next_event_code == 101 && Variable.message_rows > 4
     return next_event_code == 401
   end
-  
+
 end # Game_Interpreter
 
 #==============================================================================
@@ -297,7 +297,7 @@ end # Game_Interpreter
 #==============================================================================
 
 class Window_Base < Window
-  
+
   #--------------------------------------------------------------------------
   # new method: setup_message_font
   #--------------------------------------------------------------------------
@@ -312,7 +312,7 @@ class Window_Base < Window
     contents.font.outline = YEA::MESSAGE::MESSAGE_WINDOW_FONT_OUTLINE
     contents.font.shadow = YEA::MESSAGE::MESSAGE_WINDOW_FONT_SHADOW
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: reset_font_settings
   #--------------------------------------------------------------------------
@@ -327,7 +327,7 @@ class Window_Base < Window
       contents.font.shadow = Font.default_shadow
     end
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: convert_escape_characters
   #--------------------------------------------------------------------------
@@ -337,7 +337,7 @@ class Window_Base < Window
     result = convert_ace_message_system_new_escape_characters(result)
     return result
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: convert_ace_message_system_new_escape_characters
   #--------------------------------------------------------------------------
@@ -369,7 +369,7 @@ class Window_Base < Window
     #---
     return result
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: escape_actor_class_name
   #--------------------------------------------------------------------------
@@ -379,7 +379,7 @@ class Window_Base < Window
     return "" if actor.nil?
     return actor.class.name
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: actor_subclass_name
   #--------------------------------------------------------------------------
@@ -391,7 +391,7 @@ class Window_Base < Window
     return "" if actor.subclass.nil?
     return actor.subclass.name
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: escape_actor_nickname
   #--------------------------------------------------------------------------
@@ -401,7 +401,7 @@ class Window_Base < Window
     return "" if actor.nil?
     return actor.nickname
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: escape_icon_item
   #--------------------------------------------------------------------------
@@ -431,7 +431,7 @@ class Window_Base < Window
     text = "\eI[#{icon}]" + name
     return text
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: process_escape_character
   #--------------------------------------------------------------------------
@@ -439,21 +439,21 @@ class Window_Base < Window
   def process_escape_character(code, text, pos)
     case code.upcase
     #---
-    when 'FZ'
+    when "FZ"
       contents.font.size = obtain_escape_param(text)
-    when 'FN'
+    when "FN"
       text.sub!(/\[(.*?)\]/, "")
       font_name = $1.to_s
       font_name = Font.default_name if font_name.nil?
       contents.font.name = font_name.to_s
     #---
-    when 'OC'
+    when "OC"
       colour = text_color(obtain_escape_param(text))
       contents.font.out_color = colour
-    when 'OO'
+    when "OO"
       contents.font.out_color.alpha = obtain_escape_param(text)
     #---
-    when 'AMSF'
+    when "AMSF"
       case obtain_escape_param(text)
       when 0; reset_font_settings
       when 1; contents.font.bold = !contents.font.bold
@@ -462,12 +462,12 @@ class Window_Base < Window
       when 4; contents.font.shadow = !contents.font.shadow
       end
     #---
-    when 'PX'
+    when "PX"
       pos[:x] = obtain_escape_param(text)
-    when 'PY'
+    when "PY"
       pos[:y] = obtain_escape_param(text)
     #---
-    when 'PIC'
+    when "PIC"
       text.sub!(/\[(.*?)\]/, "")
       bmp = Cache.picture($1.to_s)
       rect = Rect.new(0, 0, bmp.width, bmp.height)
@@ -477,7 +477,7 @@ class Window_Base < Window
       window_base_process_escape_character_ams(code, text, pos)
     end
   end
-  
+
 end # Window_Base
 
 #==============================================================================
@@ -485,7 +485,7 @@ end # Window_Base
 #==============================================================================
 
 class Window_ChoiceList < Window_Command
-  
+
   #--------------------------------------------------------------------------
   # alias method: initialize
   #--------------------------------------------------------------------------
@@ -494,7 +494,7 @@ class Window_ChoiceList < Window_Command
     window_choicelist_initialize_ams(message_window)
     setup_message_font
   end
-  
+
 end # Window_ChoiceList
 
 #==============================================================================
@@ -502,7 +502,7 @@ end # Window_ChoiceList
 #==============================================================================
 
 class Window_ScrollText < Window_Base
-  
+
   #--------------------------------------------------------------------------
   # alias method: initialize
   #--------------------------------------------------------------------------
@@ -511,7 +511,7 @@ class Window_ScrollText < Window_Base
     window_scrolltext_initialize_ams
     setup_message_font
   end
-  
+
 end # Window_ScrollText
 
 #==============================================================================
@@ -519,7 +519,7 @@ end # Window_ScrollText
 #==============================================================================
 
 class Window_NameMessage < Window_Base
-  
+
   #--------------------------------------------------------------------------
   # initialize
   #--------------------------------------------------------------------------
@@ -533,7 +533,7 @@ class Window_NameMessage < Window_Base
     @close_counter = 0
     deactivate
   end
-  
+
   #--------------------------------------------------------------------------
   # update
   #--------------------------------------------------------------------------
@@ -546,7 +546,7 @@ class Window_NameMessage < Window_Base
     return if @close_counter > 0
     close
   end
-  
+
   #--------------------------------------------------------------------------
   # start_close
   #--------------------------------------------------------------------------
@@ -554,7 +554,7 @@ class Window_NameMessage < Window_Base
     @close_counter = 4
     deactivate
   end
-  
+
   #--------------------------------------------------------------------------
   # force_close
   #--------------------------------------------------------------------------
@@ -563,7 +563,7 @@ class Window_NameMessage < Window_Base
     deactivate
     close
   end
-  
+
   #--------------------------------------------------------------------------
   # start
   #--------------------------------------------------------------------------
@@ -577,7 +577,7 @@ class Window_NameMessage < Window_Base
     activate
     open
   end
-  
+
   #--------------------------------------------------------------------------
   # set_width
   #--------------------------------------------------------------------------
@@ -588,7 +588,7 @@ class Window_NameMessage < Window_Base
     dw += calculate_size(text.slice!(0, 1), text) until text.empty?
     self.width = dw
   end
-  
+
   #--------------------------------------------------------------------------
   # calculate_size
   #--------------------------------------------------------------------------
@@ -600,32 +600,32 @@ class Window_NameMessage < Window_Base
       return 0
     end
   end
-  
+
   #--------------------------------------------------------------------------
   # calculate_escape_code_width
   #--------------------------------------------------------------------------
   def calculate_escape_code_width(code, text)
     dw = -text_size("\e").width - text_size(code).width
     case code.upcase
-    when 'C', 'OC', 'OO'
+    when "C", "OC", "OO"
       dw += -text_size("[" + obtain_escape_param(text).to_s + "]").width
       return dw
-    when 'I'
+    when "I"
       dw += -text_size("[" + obtain_escape_param(text).to_s + "]").width
       dw += 24
       return dw
-    when '{'
+    when "{"
       make_font_bigger
-    when '}'
+    when "}"
       make_font_smaller
-    when 'FZ'
+    when "FZ"
       contents.font.size = obtain_escape_param(text)
-    when 'FN'
+    when "FN"
       text.sub!(/\[(.*?)\]/, "")
       font_name = $1.to_s
       font_name = Font.default_name if font_name.nil?
       contents.font.name = font_name.to_s
-    when 'AMSF'
+    when "AMSF"
       case obtain_escape_param(text)
       when 0; reset_font_settings
       when 1; contents.font.bold = !contents.font.bold
@@ -637,7 +637,7 @@ class Window_NameMessage < Window_Base
       return dw
     end
   end
-  
+
   #--------------------------------------------------------------------------
   # set_y_position
   #--------------------------------------------------------------------------
@@ -665,7 +665,7 @@ class Window_NameMessage < Window_Base
     end
     self.x = [[self.x, Graphics.width - self.width].min, 0].max
   end
-  
+
   #--------------------------------------------------------------------------
   # set_y_position
   #--------------------------------------------------------------------------
@@ -679,7 +679,7 @@ class Window_NameMessage < Window_Base
       self.y += YEA::MESSAGE::NAME_WINDOW_Y_BUFFER
     end
   end
-  
+
   #--------------------------------------------------------------------------
   # refresh
   #--------------------------------------------------------------------------
@@ -689,7 +689,7 @@ class Window_NameMessage < Window_Base
     @text = sprintf("\eC[%d]%s", YEA::MESSAGE::NAME_WINDOW_COLOUR, @text)
     draw_text_ex(YEA::MESSAGE::NAME_WINDOW_PADDING, 0, @text)
   end
-  
+
 end # Window_NameMessage
 
 #==============================================================================
@@ -697,7 +697,7 @@ end # Window_NameMessage
 #==============================================================================
 
 class Window_Message < Window_Base
-  
+
   #--------------------------------------------------------------------------
   # alias method: initialize
   #--------------------------------------------------------------------------
@@ -706,21 +706,21 @@ class Window_Message < Window_Base
     window_message_initialize_ams
     setup_message_font
   end
-  
+
   #--------------------------------------------------------------------------
   # overwrite method: window_width
   #--------------------------------------------------------------------------
   def window_width
     return Variable.message_width
   end
-  
+
   #--------------------------------------------------------------------------
   # overwrite method: window_height
   #--------------------------------------------------------------------------
   def window_height
     return fitting_height(Variable.message_rows)
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: create_all_windows
   #--------------------------------------------------------------------------
@@ -729,7 +729,7 @@ class Window_Message < Window_Base
     window_message_create_all_windows_ams
     @name_window = Window_NameMessage.new(self)
   end
-  
+
   #--------------------------------------------------------------------------
   # overwrite method: create_back_bitmap
   #--------------------------------------------------------------------------
@@ -742,7 +742,7 @@ class Window_Message < Window_Base
     @back_bitmap.fill_rect(rect2, back_color1)
     @back_bitmap.gradient_fill_rect(rect3, back_color1, back_color2, true)
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: dispose_all_windows
   #--------------------------------------------------------------------------
@@ -751,7 +751,7 @@ class Window_Message < Window_Base
     window_message_dispose_all_windows_ams
     @name_window.dispose
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: update_all_windows
   #--------------------------------------------------------------------------
@@ -762,7 +762,7 @@ class Window_Message < Window_Base
     @name_window.back_opacity = self.back_opacity
     @name_window.opacity = self.opacity
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: update_show_fast
   #--------------------------------------------------------------------------
@@ -771,7 +771,7 @@ class Window_Message < Window_Base
     @show_fast = true if Input.press?(YEA::MESSAGE::TEXT_SKIP)
     window_message_update_show_fast_ams
   end
-  
+
   #--------------------------------------------------------------------------
   # overwrite method: input_pause
   #--------------------------------------------------------------------------
@@ -779,11 +779,11 @@ class Window_Message < Window_Base
     self.pause = true
     wait(10)
     Fiber.yield until Input.trigger?(:B) || Input.trigger?(:C) ||
-      Input.press?(YEA::MESSAGE::TEXT_SKIP)
+                      Input.press?(YEA::MESSAGE::TEXT_SKIP)
     Input.update
     self.pause = false
   end
-  
+
   #--------------------------------------------------------------------------
   # overwrite method: convert_escape_characters
   #--------------------------------------------------------------------------
@@ -793,7 +793,7 @@ class Window_Message < Window_Base
     result = message_escape_characters(result)
     return result
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: namebox_escape_characters
   #--------------------------------------------------------------------------
@@ -808,7 +808,7 @@ class Window_Message < Window_Base
     result.gsub!(/\eNR\<(.+?)\>/i) { namewindow($1, 5) }
     return result
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: namebox
   #--------------------------------------------------------------------------
@@ -817,7 +817,7 @@ class Window_Message < Window_Base
     @name_position = position
     return ""
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: message_escape_characters
   #--------------------------------------------------------------------------
@@ -825,7 +825,7 @@ class Window_Message < Window_Base
     result.gsub!(/\eAF\[(-?\d+)]/i) { change_face($1.to_i) }
     return result
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: change_face
   #--------------------------------------------------------------------------
@@ -837,7 +837,7 @@ class Window_Message < Window_Base
     $game_message.face_index = actor.face_index
     return ""
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: new_page
   #--------------------------------------------------------------------------
@@ -846,14 +846,14 @@ class Window_Message < Window_Base
     adjust_message_window_size
     window_message_new_page_ams(text, pos)
   end
-  
+
   #--------------------------------------------------------------------------
   # overwrite method: new_line_x
   #--------------------------------------------------------------------------
   def new_line_x
     return $game_message.face_name.empty? ? 0 : YEA::MESSAGE::FACE_INDENT_X
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: adjust_message_window_size
   #--------------------------------------------------------------------------
@@ -865,7 +865,7 @@ class Window_Message < Window_Base
     self.x = (Graphics.width - self.width) / 2
     start_name_window
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: clear_name_window
   #--------------------------------------------------------------------------
@@ -873,7 +873,7 @@ class Window_Message < Window_Base
     @name_text = ""
     @name_position = 0
   end
-  
+
   #--------------------------------------------------------------------------
   # new method: start_name_window
   #--------------------------------------------------------------------------
@@ -881,7 +881,7 @@ class Window_Message < Window_Base
     return if @name_text == ""
     @name_window.start(@name_text, @name_position)
   end
-  
+
   #--------------------------------------------------------------------------
   # overwrite method: fiber_main
   #--------------------------------------------------------------------------
@@ -902,7 +902,7 @@ class Window_Message < Window_Base
     $game_message.visible = false
     @fiber = nil
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: open_and_wait
   #--------------------------------------------------------------------------
@@ -912,7 +912,7 @@ class Window_Message < Window_Base
     adjust_message_window_size
     window_message_open_and_wait_ams
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: close_and_wait
   #--------------------------------------------------------------------------
@@ -921,7 +921,7 @@ class Window_Message < Window_Base
     @name_window.force_close
     window_message_close_and_wait_ams
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: all_close?
   #--------------------------------------------------------------------------
@@ -929,24 +929,24 @@ class Window_Message < Window_Base
   def all_close?
     return window_message_all_close_ams && @name_window.close?
   end
-  
+
   #--------------------------------------------------------------------------
   # alias method: process_escape_character
   #--------------------------------------------------------------------------
   alias window_message_process_escape_character_ams process_escape_character
   def process_escape_character(code, text, pos)
     case code.upcase
-    when 'W' # Wait
+    when "W" # Wait
       wait(obtain_escape_param(text))
     else
       window_message_process_escape_character_ams(code, text, pos)
     end
   end
-  
+
 end # Window_Message
 
 #==============================================================================
-# 
+#
 # ▼ End of File
-# 
+#
 #==============================================================================

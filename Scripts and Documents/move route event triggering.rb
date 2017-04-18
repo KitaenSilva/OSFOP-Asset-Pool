@@ -7,7 +7,7 @@
  ** Change log
  Nov 17, 2013
    - Initial release
---------------------------------------------------------------------------------   
+--------------------------------------------------------------------------------
  ** Terms of Use
  * Free to use in non-commercial projects
  * Contact me for commercial use
@@ -18,21 +18,21 @@
  * Preserve this header
 --------------------------------------------------------------------------------
  ** Description
- 
+
  This script allows you to execute touch trigger events while a move route is
  being processed. By default, events are not executed even if the move route
  forces the character to come into contact with another character.
 
 --------------------------------------------------------------------------------
  ** Installation
- 
+
  Place this script below Materials and above Main
 
 --------------------------------------------------------------------------------
- ** Usage 
- 
+ ** Usage
+
  Plug and play.
- 
+
 #===============================================================================
 =end
 $imported = {} if $imported.nil?
@@ -49,7 +49,7 @@ class Game_Character < Game_CharacterBase
 end
 
 class Game_Player < Game_Character
-  
+
   alias :th_move_route_triggering_start_map_event :start_map_event
   def start_map_event(x, y, triggers, normal)
     if @move_route_forcing
@@ -65,7 +65,7 @@ class Game_Player < Game_Character
 end
 
 class Game_Event < Game_Character
-  
+
   alias :th_move_route_triggering_check_event_trigger_touch :check_event_trigger_touch
   def check_event_trigger_touch(x, y)
     if @move_route_forcing

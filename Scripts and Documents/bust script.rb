@@ -25,48 +25,48 @@
 #------------------------------------------------------------------------------#
 #  SCRIPT CALL
 #------------------------------------------------------------------------------#
-#  
+#
 #  bust_mirror(x)           # x can be true or false. All messages after this
 #                           # call will change until changed again.
 #                           # false = on left. true = on right and flipped.
 #
 #------------------------------------------------------------------------------#
- 
+
 ($imported ||= {})["Galvs_Message_Busts"] = true
 module Galv_Bust
- 
+
 #------------------------------------------------------------------------------#
 #  SCRIPT SETTINGS
 #------------------------------------------------------------------------------#
- 
-  DISABLE_SWITCH = 1   # Turn swith ON to disable busts and show normal face
-   
-  BUST_Z = -1           # adds to z value of busts if needed. A negative number
+
+  DISABLE_SWITCH = 1 # Turn swith ON to disable busts and show normal face
+
+  BUST_Z = -1 # adds to z value of busts if needed. A negative number
                        # will make the bust appear below the message window.
-   
+
   BUST_Y_OVER = false  # can be true or false
                        # true = busts sit at the bottom of the screen
                        # false = busts sit on top of the message window
- 
+
   TEXT_X = 0           # Offset text when displaying busts above the message
-                       # window. The script automatically offsets the text x 
+                       # window. The script automatically offsets the text x
                        # by the bust image width IF the BUST_Z is 0 or more.
- 
+
   SLIDE = true         # Slide portrait onto the screen instead of fading in.
-   
+
 #------------------------------------------------------------------------------#
 #  END SCRIPT SETTINGS
 #------------------------------------------------------------------------------#
- 
+
 end
- 
- 
+
+
 class Game_Interpreter
-   
+
   def bust_mirror(state)
     $game_message.mirror = state
   end
- 
+
   alias galv_busts_command_101 command_101
   def command_101
     $game_message.bust_name = @params[0]
@@ -74,19 +74,19 @@ class Game_Interpreter
     galv_busts_command_101
   end
 end # Game_Interpreter
- 
- 
+
+
 class Game_Message
   attr_accessor :bust_name
   attr_accessor :bust_index
   attr_accessor :mirror
-   
+
   alias galv_busts_message_initialize initialize
   def initialize
     galv_busts_message_initialize
     @mirror = false
   end
- 
+
   alias galv_busts_message_clear clear
   def clear
     @bust_name = ""
@@ -94,10 +94,10 @@ class Game_Message
     galv_busts_message_clear
   end
 end # Game_Message
- 
- 
+
+
 class Window_Message < Window_Base
-   
+
   alias galv_busts_window_create_back_bitmap create_back_bitmap
   def create_back_bitmap
     @bust = Sprite.new if @bust.nil?
@@ -106,24 +106,24 @@ class Window_Message < Window_Base
     @bust.z = z + Galv_Bust::BUST_Z
     galv_busts_window_create_back_bitmap
   end
-   
+
   alias galv_busts_window_dispose dispose
   def dispose
     galv_busts_window_dispose
     dispose_bust
   end
-   
+
   def dispose_bust
     @bust.dispose if !@bust.nil?
     @bust.bitmap.dispose if !@bust.bitmap.nil?
   end
-   
+
   alias galv_busts_window_update_back_sprite update_back_sprite
   def update_back_sprite
     galv_busts_window_update_back_sprite
     update_bust if openness > 0
   end
-   
+
   def update_bust
     if !$game_message.bust_name.empty? && !$game_switches[Galv_Bust::DISABLE_SWITCH]
       @bust.mirror = $game_message.mirror
@@ -141,7 +141,7 @@ class Window_Message < Window_Base
           @bust.x = Graphics.width - @bust.bitmap.width
         end
       end
-       
+
       if $game_message.position == 2 && !Galv_Bust::BUST_Y_OVER
         @bust.y = Graphics.height - @bust.bitmap.height - self.height
       else
@@ -154,11 +154,11 @@ class Window_Message < Window_Base
       @bust.opacity = 0
     else
       @bust.opacity = openness
-       
+
     end
     @bust.update
   end
-   
+
   def new_line_x
     if $game_switches[Galv_Bust::DISABLE_SWITCH]
       $game_message.face_name.empty? ? 0 : 112
@@ -170,10 +170,10 @@ class Window_Message < Window_Base
       end
     end
   end
-   
+
   def draw_face(face_name, face_index, x, y, enabled = true)
     return if !$game_message.face_name.empty? && !$game_switches[Galv_Bust::DISABLE_SWITCH]
     super
   end
- 
+
 end # Window_Message < Window_Base

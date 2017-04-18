@@ -9,7 +9,7 @@
    - updated to support overlay map opacities
  Mar 27, 2013
    - Initial release
---------------------------------------------------------------------------------   
+--------------------------------------------------------------------------------
  ** Terms of Use
  * Free to use in non-commercial projects
  * Contact me for commercial use
@@ -20,40 +20,40 @@
  * Preserve this header
 --------------------------------------------------------------------------------
  ** Required
- 
+
  - Overlay Maps
  http://himeworks.com/2013/03/15/overlay-maps-layered-maps-in-ace/
- 
+
  - Overlay Map Zoom files
  http://himeworks.net63.net/rpgmaker/files/overlay_mapZoom_pack.zip
 --------------------------------------------------------------------------------
  ** Description
- 
+
  This is an add-on for Overlay Maps.
  It adds zooming functionality to the overlay maps.
 --------------------------------------------------------------------------------
  ** Installation
- 
+
  Place this script below Overlay Maps and above Main.
- 
+
  Download the map zoom files and place
    * the MGC_Map_Ace.dll in the System folder
    * the three autotile pictures in Graphics/System folder
- 
+
 --------------------------------------------------------------------------------
  ** Usage
- 
+
  The zoom value that you specify for the overlay map is used to determine
  whether the map should be zoomed in or zoomed out. Refer to the Overlay
  Maps script to see where to specify the zoom value.
- 
+
  If zoom value is less than 1, then it is smaller
  If zoom value is equal to 1, then it is normal size
  If zoom value is greater than 1, then it is bigger
 
 --------------------------------------------------------------------------------
  ** Credits
- 
+
  MGC, for the map zoom code and tilemap dll
 #===============================================================================
 =end
@@ -64,7 +64,7 @@ $imported["TH_OverlayZooming"] = true
 #===============================================================================
 module TH
   module Overlay_Map_Zoom
-  
+
     # whether the parallax should be zoomed or not.
     Parallax_Zoom = true
   end
@@ -80,7 +80,7 @@ class Spriteset_OverlayMap < Spriteset_Map
     th_overlay_zooming_create_viewports
     @viewport1.zoom = @map.zoom
   end
-  
+
   #--------------------------------------------------------------------------
   # * Overwrite. Create Tilemap
   #--------------------------------------------------------------------------
@@ -177,8 +177,8 @@ class OverlayTilemap
     @zoom_incr = 0.0
     @zoom_duration = 0
     @parameters = [@render, @render_layer2, map_data, bitmaps,
-    Cache.system('autotiles_data'), Cache.system('autotiles_data_small'),
-    Cache.system('autotiles_data_xsmall'), flags, 0, 0, 0, 0, 0, 0, 1024,
+    Cache.system("autotiles_data"), Cache.system("autotiles_data_small"),
+    Cache.system("autotiles_data_xsmall"), flags, 0, 0, 0, 0, 0, 0, 1024,
     100, $game_map.loop_horizontal?, $game_map.loop_vertical?]
     self.visible = true
     self.zoom = 1.0
@@ -271,7 +271,7 @@ class OverlayTilemap
     unless new_ox == @ox
       if ox && $game_map.loop_horizontal?
         if (new_ox.to_i - ox >> 5) == $game_map.width - 1 ||
-          (ox - new_ox.to_i >> 5) == $game_map.width - 1
+           (ox - new_ox.to_i >> 5) == $game_map.width - 1
         then
           @refresh_all = true
         end
@@ -296,7 +296,7 @@ class OverlayTilemap
     unless new_oy == @oy
       if oy && $game_map.loop_vertical?
         if (new_oy.to_i - oy >> 5) == $game_map.height - 1 ||
-          (oy - new_oy.to_i >> 5) == $game_map.height - 1
+           (oy - new_oy.to_i >> 5) == $game_map.height - 1
         then
           @refresh_all = true
         end
@@ -573,7 +573,7 @@ class Sprite
   # * Getter pour l'attribut y
   #--------------------------------------------------------------------------
   def y
-    return @base_y 
+    return @base_y
   end
   #--------------------------------------------------------------------------
   # * Setter pour l'attribut zoom_x
@@ -603,7 +603,7 @@ class Sprite
   # * Getter pour l'attribut zoom_y
   #--------------------------------------------------------------------------
   def zoom_y
-    return @base_zoom_y 
+    return @base_zoom_y
   end
   #--------------------------------------------------------------------------
   # * Valeur reelle du zoom_x en prenant en compte le zoom de la carte
@@ -615,7 +615,7 @@ class Sprite
   # * Valeur reelle du zoom_y en prenant en compte le zoom de la carte
   #--------------------------------------------------------------------------
   def zoom_y_global
-    return @zoom_y 
+    return @zoom_y
   end
 end
 
@@ -770,7 +770,7 @@ class Game_OverlayMap < Game_Map
     if MGC.zoom_map_active
       if loop_horizontal?
         @display_x += @map.width - distance
-        @display_x %= @map.width 
+        @display_x %= @map.width
         @parallax_x -= distance if @parallax_loop_x
       else
         last_x = @display_x

@@ -50,7 +50,7 @@
    - fixed bug where sprites aren't drawn correctly on large maps
    - added support for layer ordering
    - Initial release
---------------------------------------------------------------------------------   
+--------------------------------------------------------------------------------
  ** Terms of Use
  * Free to use in non-commercial projects
  * Contact me for commercial use
@@ -61,15 +61,15 @@
  * Preserve this header
 --------------------------------------------------------------------------------
  ** Description
- 
+
  This script allows you to create "overlay maps" on top of each other.
  Overlay maps allow you to create much more visually attractive maps since
  you now have control over different "layers", though these are only visual
  effects.
- 
+
  An overlay map is just another map, except it is drawn over your current
  map. The overlay map comes with the following properties
- 
+
  - It does not need to use the same tileset as your current map.
    This means you can merge multiple tilesets together in a single map
 
@@ -86,32 +86,32 @@
 
  - Map layers can re-use each other, so if one map uses another map
    as the top layer, then that map can use the previous map as the bottom layer
-   
+
  - Each overlay map can have its own screen effects (weather, shaking, flashing)
    and zoom factor
 
 You can have an unlimited number of overlay maps.
-   
+
  A single map can contain multiple overlay maps.
 --------------------------------------------------------------------------------
  ** Usage
- 
+
  Place this script below Materials and above Main.
- 
+
  There are two types of note-tags: compact, and extended.
  The compact note-tag is short and easy to type, but the extended note-tag
  is probably better for organization. Note that the compact note-tag
  is deprecated and will not support any additional options that may be
  added in the future.
- 
+
  To assign overlay maps to a map, tag the map with
 
  Compact:
-   
+
     <overlay map: map order ox oy scroll_rate sync zoom>
-    
+
  Extended
- 
+
     <overlay map>
       map: x
       order: x
@@ -121,43 +121,43 @@ You can have an unlimited number of overlay maps.
       zoom: x
       opacity: x
     </overlay map>
-   
+
  The map is the ID of the map that will be drawn as an overlay.
- 
+
  The order determines whether it will be drawn above or below the current map.
  If it is negative, then it will be drawn under.
  If it is positive, then it will be drawn over.
  If it is not specified, then it assumes to be over, in the order that the
  tags are specified.
- 
+
  ox and oy determine the offset of the origin. By default, the map's origin
  is drawn at (ox = 0, oy = 0), but you can change this if necessary.
    Positive x-values shift it right.
-   Negative x-values shift it to the left. 
+   Negative x-values shift it to the left.
    Positive y-values shift it down.
    Negative y-values shift it up.
- 
+
  The scroll rate specifies how fast the overlay map scrolls per step taken.
  The default scroll rate is 32, which means it will scroll
  32 pixels per move, or basically one tile. Higher scroll rates mean the
  overlay map will scroll faster for each step you take, while slower scroll
  rates results in less scrolling for each step you take.
- 
+
  Sync specifies whether the overlay map is synchronized with the current
  map. This means that any screen effects such as shaking or weather will affect
  the overlay map as well.
    0 = not synchronized
    1 = synchronized
-   
+
  The zoom value is a special option if you have installed the Overlay Map Zoom
  script. Refer to that script for more details.
- 
+
  The opacity value specifies the opacity of the overlay map.
- 
+
  You can have multiple overlay maps by simply adding
  more tags. Note that the order they are drawn depends on the order you tag
  them.
- 
+
 #===============================================================================
 =end
 $imported = {} if $imported.nil?
@@ -169,7 +169,7 @@ module TH
   module Overlay_Maps
     Regex = /<overlay[-_ ]map: (\d+)\s*(-?\d+)?\s*(-?\d+)?\s*(-?\d+)?\s*(\d+)?\s*(\d+)?\s*([\d.]+)?>/im
     ExtRegex = /<overlay[-_ ]map>(.*?)<\/overlay[-_ ]map>/im
-    
+
     class Data
       attr_accessor :map_id
       attr_accessor :order
@@ -179,7 +179,7 @@ module TH
       attr_accessor :synchronized
       attr_accessor :zoom
       attr_accessor :opacity
-      
+
       def initialize
         @map_id = 0
         @order = 1
@@ -199,16 +199,16 @@ end
 
 module RPG
   class Map
-    
+
     def overlay_maps
       return @overlay_maps unless @overlays_maps.nil?
       load_notetag_overlay_maps
       return @overlay_maps
-    end    
-    
+    end
+
     def load_notetag_overlay_maps
       @overlay_maps = []
-      
+
       # load compact notes
       res = self.note.scan(TH::Overlay_Maps::Regex)
       res.each {|result|
@@ -229,7 +229,7 @@ module RPG
         @overlay_maps.push(map_data)
       }
     end
-    
+
     #---------------------------------------------------------------------------
     # Given a list of options, parse the options and return a list of
     # arguments
@@ -238,7 +238,7 @@ module RPG
       # load defaults
       data = TH::Overlay_Maps::Data.new
       # parse options
-      options.each {|option|        
+      options.each {|option|
         name, value = option.split(":")
         value = value.strip
         case name.strip.downcase
@@ -265,19 +265,19 @@ end
 
 class Game_Map
   attr_reader :overlay_maps
-  
+
   alias :th_overlay_maps_initialize :initialize
   def initialize
     th_overlay_maps_initialize
     @overlay_maps = []
   end
-  
+
   alias :th_overlay_maps_setup :setup
   def setup(map_id)
     th_overlay_maps_setup(map_id)
     setup_overlay_maps
   end
-  
+
   def setup_overlay_maps
     @overlay_maps = []
     @map.overlay_maps.each {|overlayData|
@@ -286,17 +286,17 @@ class Game_Map
       @overlay_maps.push(map)
     }
   end
-  
+
   alias :th_overlay_maps_update :update
   def update(main = false)
     th_overlay_maps_update(main)
     update_overlay_maps
   end
-  
+
   def update_overlay_maps
     @overlay_maps.each {|map| map.update}
   end
-  
+
   alias :th_overlay_maps_refresh :refresh
   def refresh
     th_overlay_maps_refresh
@@ -314,10 +314,10 @@ class Game_OverlayMap < Game_Map
   attr_reader :synchronized    # shares same screen as current map
   attr_reader :scroll_rate     # pixels to scroll per frame
   attr_reader :offset_x
-  attr_reader :offset_y         
+  attr_reader :offset_y
   attr_reader :zoom
   attr_reader :opacity
-  
+
   #-----------------------------------------------------------------------------
   # Don't create overlay maps for overlay maps...
   #-----------------------------------------------------------------------------
@@ -333,17 +333,17 @@ class Game_OverlayMap < Game_Map
     @screen = Game_Screen.new
     @interpreter = Game_OverlayInterpreter.new(self)
   end
-  
+
   def update(main=false)
     th_overlay_maps_update(main)
   end
-  
+
   def vehicles
     @vehicles.select {|veh|
-      veh.instance_variable_get(:@map_id) == @map_id 
+      veh.instance_variable_get(:@map_id) == @map_id
     }
   end
-  
+
   #-----------------------------------------------------------------------------
   # Create overlay events
   #-----------------------------------------------------------------------------
@@ -364,19 +364,19 @@ end
 # on the map they are drawn on
 #-------------------------------------------------------------------------------
 class Game_OverlayEvent < Game_Event
-  
+
   def initialize(map_id, event, map)
     @map = map
     super(map_id, event)
     @opacity = map.opacity
   end
-  
+
   def near_the_screen?(dx = 12, dy = 8)
     ax = $game_map.adjust_x(@real_x) - Graphics.width / 2 / 32
     ay = $game_map.adjust_y(@real_y) - Graphics.height / 2 / 32
     ax >= -dx && ax <= dx && ay >= -dy && ay <= dy
   end
-  
+
   def passable?(x, y, d)
     x2 = @map.round_x_with_direction(x, d)
     y2 = @map.round_y_with_direction(y, d)
@@ -387,28 +387,28 @@ class Game_OverlayEvent < Game_Event
     return false if collide_with_characters?(x2, y2)
     return true
   end
-  
+
   def diagonal_passable?(x, y, horz, vert)
     x2 = @map.round_x_with_direction(x, horz)
     y2 = @map.round_y_with_direction(y, vert)
     (passable?(x, y, vert) && passable?(x, y2, horz)) ||
-    (passable?(x, y, horz) && passable?(x2, y, vert))
+      (passable?(x, y, horz) && passable?(x2, y, vert))
   end
-  
+
   def map_passable?(x, y, d)
     @map.passable?(x, y, d)
   end
-  
+
   def collide_with_events?(x, y)
     @map.events_xy_nt(x, y).any? do |event|
       event.normal_priority? || self.is_a?(Game_Event)
     end
   end
-  
+
   def collide_with_vehicles?(x, y)
     @map.boat.pos_nt?(x, y) || $game_map.ship.pos_nt?(x, y)
   end
-  
+
   def moveto(x, y)
     @x = x % @map.width
     @y = y % @map.height
@@ -418,37 +418,37 @@ class Game_OverlayEvent < Game_Event
     straighten
     update_bush_depth
   end
-  
+
   def screen_x
     @map.adjust_x(@real_x) * 32
   end
-  
+
   def screen_y
     @map.adjust_y(@real_y) * 32 - shift_y - jump_height
   end
-  
+
   def ladder?
     @map.ladder?(@x, @y)
   end
-  
+
   def bush?
     @map.bush?(@x, @y)
   end
-  
+
   def terrain_tag
     @map.terrain_tag(@x, @y)
   end
-  
+
   def region_id
     @map.region_id(@x, @y)
   end
-  
+
   def check_event_trigger_touch_front
     x2 = @map.round_x_with_direction(@x, @direction)
     y2 = @map.round_y_with_direction(@y, @direction)
     check_event_trigger_touch(x2, y2)
   end
-  
+
   def move_straight(d, turn_ok = true)
     @move_succeed = passable?(@x, @y, d)
     if @move_succeed
@@ -463,7 +463,7 @@ class Game_OverlayEvent < Game_Event
       check_event_trigger_touch_front
     end
   end
-  
+
   def move_diagonal(horz, vert)
     @move_succeed = diagonal_passable?(x, y, horz, vert)
     if @move_succeed
@@ -476,7 +476,7 @@ class Game_OverlayEvent < Game_Event
     set_direction(horz) if @direction == reverse_dir(horz)
     set_direction(vert) if @direction == reverse_dir(vert)
   end
-  
+
   #-----------------------------------------------------------------------------
   # Overlay events use an overlay interpreter
   #-----------------------------------------------------------------------------
@@ -491,16 +491,16 @@ end
 # the appropriate overlay map
 #-------------------------------------------------------------------------------
 class Game_OverlayInterpreter < Game_Interpreter
-  
+
   def initialize(map, depth = 0)
     @map = map
     super(depth)
   end
-  
+
   def screen
     $game_party.in_battle ? $game_troop.screen : @map.screen
   end
-  
+
   def command_117
     common_event = $data_common_events[@params[0]]
     if common_event
@@ -512,7 +512,7 @@ class Game_OverlayInterpreter < Game_Interpreter
 end
 
 class Spriteset_Map
-  
+
   #-----------------------------------------------------------------------------
   # Instead of having a weather sprite for every layer, we assume that there
   # can only be one weather, which is defined by the current map. Therefore,
@@ -521,11 +521,11 @@ class Spriteset_Map
   #-----------------------------------------------------------------------------
   def create_weather
     return unless @map_id == $game_map.map_id
-    @weather_viewport = Viewport.new    
+    @weather_viewport = Viewport.new
     @weather_viewport.z = $game_map.overlay_maps.size > 0 ? $game_map.overlay_maps.max {|map| map.order }.order * 100 + 50 : 50
     @weather = Spriteset_Weather.new(@weather_viewport)
   end
-  
+
   def dispose_weather
     @weather.dispose
     @weather_viewport.dispose
@@ -533,11 +533,11 @@ class Spriteset_Map
 end
 
 #-------------------------------------------------------------------------------
-# The overlay map spriteset. Same as the map spriteset, except it holds a 
+# The overlay map spriteset. Same as the map spriteset, except it holds a
 # reference to a specific overlay map and retrieves all valus from it.
 #-------------------------------------------------------------------------------
 class Spriteset_OverlayMap < Spriteset_Map
-  
+
   def initialize(map)
     @tile_ratio = 32.0 / map.scroll_rate
     @zoom_ratio = map.zoom >= 1 ? map.zoom : 1.0 / map.zoom
@@ -550,7 +550,7 @@ class Spriteset_OverlayMap < Spriteset_Map
     @map = map
     super()
   end
-  
+
   #-----------------------------------------------------------------------------
   # Custom viewport ordering scheme
   #-----------------------------------------------------------------------------
@@ -560,12 +560,12 @@ class Spriteset_OverlayMap < Spriteset_Map
     @viewport2.z = 50 + (100 * @map.order)
     @viewport3.z = 100 + (100 * @map.order)
   end
-  
+
   def create_tilemap
     super
     @tilemap.map_data = @map.data
   end
-  
+
   def load_tileset
     @tileset = @map.tileset
     @tileset.tileset_names.each_with_index do |name, i|
@@ -579,13 +579,13 @@ class Spriteset_OverlayMap < Spriteset_Map
     end
     @tilemap.flags = @tileset.flags
   end
-  
+
   def create_characters
     super
-    
+
     # Delete all existing character sprites. We don't care about $game_map
     dispose_characters
-    
+
     @character_sprites = []
     @map.events.values.each do |event|
       @character_sprites.push(Sprite_Character.new(@viewport1, event))
@@ -601,11 +601,11 @@ class Spriteset_OverlayMap < Spriteset_Map
       refresh_characters
     end
   end
-  
+
   def dispose_characters
     @character_sprites.each {|sprite| sprite.dispose }
   end
-  
+
   def update_characters
     super
     @character_sprites.each {|sprite|
@@ -613,17 +613,17 @@ class Spriteset_OverlayMap < Spriteset_Map
       sprite.oy = ($game_map.display_y + @offset_y) * @map.scroll_rate
     }
   end
-  
+
   def update_tilemap
     @tilemap.map_data = @map.data
     @tilemap.ox = ($game_map.display_x + @offset_x) * @map.scroll_rate
     @tilemap.oy = ($game_map.display_y + @offset_y) * @map.scroll_rate
-    @tilemap.update    
+    @tilemap.update
   end
-  
+
   def create_weather
   end
-  
+
   # Overlay maps do not have any weather settings
   def update_weather
     #if @map.synchronized
@@ -637,10 +637,10 @@ class Spriteset_OverlayMap < Spriteset_Map
     #@weather.oy = $game_map.display_y * 32
     #@weather.update
   end
-  
+
   def dispose_weather
   end
-  
+
   #-----------------------------------------------------------------------------
   # Get parallax name from the associated overlay map
   #-----------------------------------------------------------------------------
@@ -650,20 +650,20 @@ class Spriteset_OverlayMap < Spriteset_Map
       @parallax.bitmap.dispose if @parallax.bitmap
       @parallax.bitmap = Cache.parallax(@parallax_name).clone
     end
-    
+
     # not sure why I need to check this now
-    unless @parallax.bitmap.disposed?    
+    unless @parallax.bitmap.disposed?
       @parallax.ox = @map.parallax_ox(@parallax.bitmap)
       @parallax.oy = @map.parallax_oy(@parallax.bitmap)
     end
   end
-  
+
   alias :th_overlay_maps_update_shadow :update_shadow
   def update_shadow
     return if @map.order > 0
     th_overlay_maps_update_shadow
   end
-  
+
   #-----------------------------------------------------------------------------
   # Overwrite.
   #-----------------------------------------------------------------------------
@@ -684,7 +684,7 @@ class Spriteset_OverlayMap < Spriteset_Map
     @viewport2.update
     @viewport3.update
   end
-  
+
   #-----------------------------------------------------------------------------
   # New. Use a sliding viewport technique to prevent the maps from looping
   # There are six cases to consider: three for horizontal, three for vertical
@@ -729,7 +729,7 @@ class Spriteset_OverlayMap < Spriteset_Map
         @viewport1.rect.width = [(@map.width * @tile_ratio - @offset_x - $game_map.display_x) * @map.scroll_rate, 0].max
       end
     end
-    
+
     # update y, oy, and height
     unless @map.loop_vertical?
       # top edge of map
@@ -749,16 +749,16 @@ class Spriteset_OverlayMap < Spriteset_Map
 end
 
 class Scene_Map < Scene_Base
-  
+
   #-----------------------------------------------------------------------------
-  # 
+  #
   #-----------------------------------------------------------------------------
   alias :th_overlay_maps_create_spriteset :create_spriteset
   def create_spriteset
     th_overlay_maps_create_spriteset
     create_overlay_maps
   end
-  
+
   def create_overlay_maps
     @layer_spritesets = []
     $game_map.overlay_maps.each {|lmap|
@@ -766,41 +766,41 @@ class Scene_Map < Scene_Base
     }
     update_overlay_maps
   end
-  
+
   #-----------------------------------------------------------------------------
-  # 
+  #
   #-----------------------------------------------------------------------------
   alias :th_overlay_maps_dispose_spriteset :dispose_spriteset
   def dispose_spriteset
     th_overlay_maps_dispose_spriteset
     dispose_overlay_maps
   end
-  
+
   def dispose_overlay_maps
     @layer_spritesets.each {|spr| spr.dispose}
   end
-  
+
   #-----------------------------------------------------------------------------
-  # 
+  #
   #-----------------------------------------------------------------------------
   alias :th_overlay_maps_update :update
-  def update    
+  def update
     th_overlay_maps_update
     update_overlay_maps
   end
-  
+
   def update_overlay_maps
     @layer_spritesets.each {|spr| spr.update}
   end
-  
+
   alias :th_overlay_maps_pre_transfer :pre_transfer
-  def pre_transfer    
+  def pre_transfer
     th_overlay_maps_pre_transfer
     dispose_overlay_maps
   end
-  
+
   #-----------------------------------------------------------------------------
-  # 
+  #
   #-----------------------------------------------------------------------------
   alias :th_overlay_maps_post_transfer :post_transfer
   def post_transfer

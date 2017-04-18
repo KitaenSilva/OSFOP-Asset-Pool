@@ -9,7 +9,7 @@
    - key item list is pulled from the leader
  Jul 27, 2013
    - Initial release
---------------------------------------------------------------------------------   
+--------------------------------------------------------------------------------
  ** Terms of Use
  * Free to use in non-commercial projects
  * Contact me for commercial use
@@ -20,26 +20,26 @@
  * Preserve this header
 --------------------------------------------------------------------------------
  ** Description
- 
+
  This script provides scenes and windows to complement the Actor Inventory
  system. It is based on the default scenes and windows.
- 
+
 --------------------------------------------------------------------------------
  ** Required
- 
+
  Actor Inventory
  (http://himeworks.com/2013/07/27/actor-inventory/)
- 
+
 --------------------------------------------------------------------------------
  ** Installation
- 
+
  Place this script below Actor Inventory and above Main
 
 --------------------------------------------------------------------------------
- ** Usage 
- 
+ ** Usage
+
  Plug and play.
- 
+
 #===============================================================================
 =end
 $imported = {} if $imported.nil?
@@ -53,46 +53,46 @@ $imported["TH_ActorInventoryScenes"] = true
 # from the actor's inventory
 #-------------------------------------------------------------------------------
 class Window_ItemList < Window_Selectable
-  
+
   alias :th_actor_inventory_initialize :initialize
   def initialize(x, y, width, height)
     th_actor_inventory_initialize(x, y, width, height)
     @actor ||= $game_party.leader
   end
-  
+
   def actor=(actor)
     return if @actor == actor
     @actor = actor
     refresh
   end
-  
+
   def make_item_list
     @data = @actor.all_items.select {|item| include?(item) }
     @data.push(nil) if include?(nil)
   end
-  
+
   def enable?(item)
     @actor.usable?(item)
   end
-  
+
   def select_last
     select(@data.index(@actor.last_item.object) || 0)
   end
-  
+
   def draw_item_number(rect, item)
     draw_text(rect, sprintf(":%2d", @actor.item_number(item)), 2)
   end
 end
 
 class Scene_Item < Scene_ItemBase
-  
+
   alias :th_actor_inventory_create_category_window :create_category_window
   def create_category_window
     th_actor_inventory_create_category_window
     @category_window.set_handler(:pagedown, method(:next_actor))
     @category_window.set_handler(:pageup,   method(:prev_actor))
   end
-  
+
   alias :th_actor_inventory_create_item_window :create_item_window
   def create_item_window
     th_actor_inventory_create_item_window
@@ -100,14 +100,14 @@ class Scene_Item < Scene_ItemBase
     @item_window.set_handler(:pagedown, method(:next_actor))
     @item_window.set_handler(:pageup,   method(:prev_actor))
   end
-  
+
   #-----------------------------------------------------------------------------
   # Replace
   #-----------------------------------------------------------------------------
   def user
     @actor
   end
-  
+
   #-----------------------------------------------------------------------------
   # Replace
   #-----------------------------------------------------------------------------
@@ -115,12 +115,12 @@ class Scene_Item < Scene_ItemBase
     @actor.last_item.object = item
     determine_item
   end
-  
+
   def on_actor_change
     @item_window.actor = @actor
     activate_current_window
   end
-  
+
   #-----------------------------------------------------------------------------
   # Activate the appropriate window depending on which window is currently
   # active
@@ -141,7 +141,7 @@ class Scene_Menu < Scene_MenuBase
   def command_item
     command_personal
   end
-  
+
   alias :th_actor_inventory_on_personal_ok :on_personal_ok
   def on_personal_ok
     return SceneManager.call(Scene_Item) if @command_window.current_symbol == :item
@@ -152,7 +152,7 @@ end
 # Need to change these as well
 #-------------------------------------------------------------------------------
 class Window_BattleItem < Window_ItemList
-    
+
   #--------------------------------------------------------------------------
   # * Include in Item List?
   #--------------------------------------------------------------------------
@@ -162,13 +162,13 @@ class Window_BattleItem < Window_ItemList
 end
 
 class Scene_Battle < Scene_Base
-  
+
   alias :th_actor_inventory_command_item :command_item
   def command_item
     @item_window.actor = BattleManager.actor
     th_actor_inventory_command_item
   end
-  
+
   alias :th_actor_inventory_on_item_ok :on_item_ok
   def on_item_ok
     th_actor_inventory_on_item_ok
@@ -179,29 +179,29 @@ end
 # You must first choose who is going to buy
 #-------------------------------------------------------------------------------
 class Window_ShopStatus < Window_Base
-  
+
   alias :th_actor_inventory_initialize :initialize
   def initialize(x, y, width, height)
     @actor = nil
     th_actor_inventory_initialize(x, y, width, height)
   end
-  
+
   def actor=(actor)
     return if @actor == actor
     @actor = actor
     refresh
   end
-  
+
   def draw_current_actor(x, y)
     rect = Rect.new(x, y, contents.width - 4 - x, line_height)
     change_color(system_color)
     draw_text(rect, @actor.name)
   end
-  
+
   alias :th_actor_inventory_draw_possession :draw_possession
   def draw_possession(x, y)
     if @actor
-      draw_current_actor(x, y) 
+      draw_current_actor(x, y)
       rect = Rect.new(x, y + line_height, contents.width - 4 - x, line_height)
       change_color(system_color)
       draw_text(rect, Vocab::Possession)
@@ -212,13 +212,13 @@ class Window_ShopStatus < Window_Base
 end
 
 class Window_ShopBuy < Window_Selectable
-  
+
   def actor=(actor)
     return if @actor == actor
     @actor = actor
     refresh
   end
-  
+
   def enable?(item)
     item && price(item) <= @money && @actor && !@actor.item_max?(item)
   end
@@ -233,19 +233,19 @@ class Window_ShopSell < Window_ItemList
 end
 
 class Scene_Shop < Scene_MenuBase
-  
+
   alias :th_actor_inventory_start :start
   def start
     th_actor_inventory_start
     @actor = $game_party.leader
   end
-  
+
   alias :th_actor_inventory_create_status_window :create_status_window
   def create_status_window
     th_actor_inventory_create_status_window
     @status_window.actor = @actor
   end
-  
+
   alias :th_actor_inventory_create_buy_window :create_buy_window
   def create_buy_window
     th_actor_inventory_create_buy_window
@@ -253,7 +253,7 @@ class Scene_Shop < Scene_MenuBase
     @buy_window.set_handler(:pageup,   method(:prev_actor))
     @buy_window.actor = @actor
   end
-  
+
   alias :th_actor_inventory_create_sell_window :create_sell_window
   def create_sell_window
     th_actor_inventory_create_sell_window
@@ -261,7 +261,7 @@ class Scene_Shop < Scene_MenuBase
     @sell_window.set_handler(:pageup,   method(:prev_actor))
     @sell_window.actor = @actor
   end
-  
+
   #-----------------------------------------------------------------------------
   # Overwrite
   #-----------------------------------------------------------------------------
@@ -269,14 +269,14 @@ class Scene_Shop < Scene_MenuBase
     max = @actor.max_item_number(@item) - @actor.item_number(@item)
     buying_price == 0 ? max : [max, money / buying_price].min
   end
-  
+
   #-----------------------------------------------------------------------------
   # Overwrite
   #-----------------------------------------------------------------------------
   def max_sell
     @actor.item_number(@item)
   end
-  
+
   #-----------------------------------------------------------------------------
   # Overwrite
   #-----------------------------------------------------------------------------
@@ -284,7 +284,7 @@ class Scene_Shop < Scene_MenuBase
     $game_party.lose_gold(number * buying_price)
     @actor.gain_item(@item, number)
   end
-  
+
   #-----------------------------------------------------------------------------
   # Overwrite
   #-----------------------------------------------------------------------------
@@ -292,14 +292,14 @@ class Scene_Shop < Scene_MenuBase
     $game_party.gain_gold(number * selling_price)
     @actor.lose_item(@item, number)
   end
-  
+
   def on_actor_change
-    @status_window.actor = @actor    
+    @status_window.actor = @actor
     @buy_window.actor = @actor
     @sell_window.actor = @actor
     activate_current_window
   end
-  
+
   def activate_current_window
     case @command_window.current_symbol
     when :buy

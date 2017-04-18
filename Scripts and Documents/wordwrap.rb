@@ -48,10 +48,10 @@ module KZIsAwesome
 
     # change this if you want white space mode on by default.
     DEFAULT_WHITESPACE = false
-   
+
     # change this if you want white space mode on by default.
     DEFAULT_COLLAPSE = true
-    
+
     # change this to add a right margin to the window.
     DEFAULT_RIGHT_MARGIN = 0
 
@@ -73,9 +73,9 @@ class Window_Base < Window
 
   alias_method :process_character_kz_window_base, :process_character
   def process_character(c, text, pos)
-    c = ' ' if @convert_newlines && c == "\n"
+    c = " " if @convert_newlines && c == "\n"
     if @wordwrap && c =~ /[ \t]/
-      c = '' if @collapse_whitespace && @lastc =~ /[\s\n\f]/
+      c = "" if @collapse_whitespace && @lastc =~ /[\s\n\f]/
       if pos[:x] + get_next_word_size(c, text) > contents.width - @right_margin
         process_new_line(text, pos)
       else
@@ -104,7 +104,7 @@ class Window_Base < Window
         # Erase and count icons in remaining text
         nextword.gsub!(/\e[iIhH]+\[[\d,]*\]/) do
           icons += 1
-          ''
+          ""
         end if nextword
       end
       wordsize = (nextword ? text_size(c + nextword).width : text_size( c ).width)
@@ -118,29 +118,29 @@ class Window_Base < Window
   alias_method :process_escape_character_kz_window_base, :process_escape_character
   def process_escape_character(code, text, pos)
     case code.upcase
-    when 'WW'
+    when "WW"
       @wordwrap = true
-    when 'NW'
+    when "NW"
       @wordwrap = false
-    when 'WS'
+    when "WS"
       @convert_newlines = true
-    when 'NL'
+    when "NL"
       @convert_newlines = false
-    when 'CS'
+    when "CS"
       @collapse_whitespace = true
-    when 'PRE'
+    when "PRE"
       @collapse_whitespace = false
-    when 'BR'
+    when "BR"
       process_new_line(text, pos)
       @lastc = "\n"
-    when 'RM'
+    when "RM"
       @right_margin = obtain_escape_param(text)
     else
       process_escape_character_kz_window_base(code, text, pos)
     end
     # Recalculate the next word size and insert line breaks
     # (Needed primarily for font changes)
-    if pos[:x] + get_next_word_size('', text) > contents.width
+    if pos[:x] + get_next_word_size("", text) > contents.width
       process_new_line(text, pos)
     end
   end

@@ -1,0 +1,57 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  DisabledByDefault: true
+
+Style/CaseIndentation:
+  Enabled: true
+
+Style/IndentationWidth:
+  Enabled: true
+
+Style/SpaceAfterComma:
+  Enabled: true
+
+# Check quotes usage according to lint rule below.
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+# Detect hard tabs, no hard tabs.
+Style/Tab:
+  Enabled: true
+
+# Blank lines should not have any spaces.
+Style/TrailingBlankLines:
+  Enabled: true
+
+# No trailing whitespace.
+Style/TrailingWhitespace:
+  Enabled: true
+
+# Align `end` with the matching keyword or starting expression except for
+# assignments, where it should be aligned with the LHS.
+Lint/EndAlignment:
+  Enabled: true
+  AutoCorrect: true
+
+Lint/DefEndAlignment:
+  Enabled: true
+  AutoCorrect: true
+
+Lint/BlockAlignment:
+  Enabled: true
+
+Style/ExtraSpacing:
+  Enabled: true
+
+Style/MultilineOperationIndentation:
+  Enabled: true
+
+Style/AccessModifierIndentation:
+  Enabled: true
+
+Style/MultilineMethodCallIndentation:
+  Enabled: true
+
+Style/IndentationConsistency:
+  Enabled: true
