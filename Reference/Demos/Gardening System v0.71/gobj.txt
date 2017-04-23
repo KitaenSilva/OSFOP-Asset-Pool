@@ -1,0 +1,827 @@
+
+-----
+Time: 2016-01-14 04:38:35 -0500
+CRITICAL OBJECT #<Sprite_GardenText:0x4306a70>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0133 -- Full Script, Line: 2763:in `add_spgt_to_spm'
+Script 0133 -- Full Script, Line: 656:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:39:24 -0500
+CRITICAL OBJECT #<Sprite_GardenText:0x4247df0>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0133 -- Full Script, Line: 2763:in `add_spgt_to_spm'
+Script 0133 -- Full Script, Line: 656:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:04 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x32afaa0>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:04 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x9317a78>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:05 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x952b4a4>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:05 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x945f714>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:38 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x9278810>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0130 -- Sprite_Hl, Line: 139:in `block (2 levels) in make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 138:in `each'
+Script 0130 -- Sprite_Hl, Line: 138:in `block in make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 137:in `each'
+Script 0130 -- Sprite_Hl, Line: 137:in `make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 130:in `create_highlights_tb'
+Script 0130 -- Sprite_Hl, Line: 218:in `refresh_highlights'
+Script 0130 -- Sprite_Hl, Line: 155:in `update_highlights'
+Script 0130 -- Sprite_Hl, Line: 148:in `update'
+Script 0133 -- Full Script, Line: 2737:in `update'
+Script 0102 -- Scene_Map, Line: 89:in `update_for_fade'
+Script 0102 -- Scene_Map, Line: 97:in `block in fade_loop'
+Script 0102 -- Scene_Map, Line: 95:in `times'
+Script 0102 -- Scene_Map, Line: 95:in `fade_loop'
+Script 0102 -- Scene_Map, Line: 104:in `fadein'
+Script 0102 -- Scene_Map, Line: 226:in `post_transfer'
+Script 0102 -- Scene_Map, Line: 205:in `perform_transfer'
+Script 0102 -- Scene_Map, Line: 166:in `update_transfer_player'
+Script 0102 -- Scene_Map, Line: 78:in `update_scene'
+Script 0102 -- Scene_Map, Line: 65:in `update'
+Script 0133 -- Full Script, Line: 1982:in `update'
+Script 0139 -- Hotkeys, Line: 1126:in `update'
+Script 0100 -- Scene_Base, Line: 14:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 04:52:38 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x9278144>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0130 -- Sprite_Hl, Line: 139:in `block (2 levels) in make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 138:in `each'
+Script 0130 -- Sprite_Hl, Line: 138:in `block in make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 137:in `each'
+Script 0130 -- Sprite_Hl, Line: 137:in `make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 130:in `create_highlights_tb'
+Script 0130 -- Sprite_Hl, Line: 218:in `refresh_highlights'
+Script 0130 -- Sprite_Hl, Line: 155:in `update_highlights'
+Script 0130 -- Sprite_Hl, Line: 148:in `update'
+Script 0133 -- Full Script, Line: 2737:in `update'
+Script 0102 -- Scene_Map, Line: 89:in `update_for_fade'
+Script 0102 -- Scene_Map, Line: 97:in `block in fade_loop'
+Script 0102 -- Scene_Map, Line: 95:in `times'
+Script 0102 -- Scene_Map, Line: 95:in `fade_loop'
+Script 0102 -- Scene_Map, Line: 104:in `fadein'
+Script 0102 -- Scene_Map, Line: 226:in `post_transfer'
+Script 0102 -- Scene_Map, Line: 205:in `perform_transfer'
+Script 0102 -- Scene_Map, Line: 166:in `update_transfer_player'
+Script 0102 -- Scene_Map, Line: 78:in `update_scene'
+Script 0102 -- Scene_Map, Line: 65:in `update'
+Script 0133 -- Full Script, Line: 1982:in `update'
+Script 0139 -- Hotkeys, Line: 1126:in `update'
+Script 0100 -- Scene_Base, Line: 14:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 04:52:38 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x9277af0>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0130 -- Sprite_Hl, Line: 139:in `block (2 levels) in make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 138:in `each'
+Script 0130 -- Sprite_Hl, Line: 138:in `block in make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 137:in `each'
+Script 0130 -- Sprite_Hl, Line: 137:in `make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 130:in `create_highlights_tb'
+Script 0130 -- Sprite_Hl, Line: 218:in `refresh_highlights'
+Script 0130 -- Sprite_Hl, Line: 155:in `update_highlights'
+Script 0130 -- Sprite_Hl, Line: 148:in `update'
+Script 0133 -- Full Script, Line: 2737:in `update'
+Script 0102 -- Scene_Map, Line: 89:in `update_for_fade'
+Script 0102 -- Scene_Map, Line: 97:in `block in fade_loop'
+Script 0102 -- Scene_Map, Line: 95:in `times'
+Script 0102 -- Scene_Map, Line: 95:in `fade_loop'
+Script 0102 -- Scene_Map, Line: 104:in `fadein'
+Script 0102 -- Scene_Map, Line: 226:in `post_transfer'
+Script 0102 -- Scene_Map, Line: 205:in `perform_transfer'
+Script 0102 -- Scene_Map, Line: 166:in `update_transfer_player'
+Script 0102 -- Scene_Map, Line: 78:in `update_scene'
+Script 0102 -- Scene_Map, Line: 65:in `update'
+Script 0133 -- Full Script, Line: 1982:in `update'
+Script 0139 -- Hotkeys, Line: 1126:in `update'
+Script 0100 -- Scene_Base, Line: 14:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 04:52:38 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x9277488>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0130 -- Sprite_Hl, Line: 139:in `block (2 levels) in make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 138:in `each'
+Script 0130 -- Sprite_Hl, Line: 138:in `block in make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 137:in `each'
+Script 0130 -- Sprite_Hl, Line: 137:in `make_hls_visible_for_map'
+Script 0130 -- Sprite_Hl, Line: 130:in `create_highlights_tb'
+Script 0130 -- Sprite_Hl, Line: 218:in `refresh_highlights'
+Script 0130 -- Sprite_Hl, Line: 155:in `update_highlights'
+Script 0130 -- Sprite_Hl, Line: 148:in `update'
+Script 0133 -- Full Script, Line: 2737:in `update'
+Script 0102 -- Scene_Map, Line: 89:in `update_for_fade'
+Script 0102 -- Scene_Map, Line: 97:in `block in fade_loop'
+Script 0102 -- Scene_Map, Line: 95:in `times'
+Script 0102 -- Scene_Map, Line: 95:in `fade_loop'
+Script 0102 -- Scene_Map, Line: 104:in `fadein'
+Script 0102 -- Scene_Map, Line: 226:in `post_transfer'
+Script 0102 -- Scene_Map, Line: 205:in `perform_transfer'
+Script 0102 -- Scene_Map, Line: 166:in `update_transfer_player'
+Script 0102 -- Scene_Map, Line: 78:in `update_scene'
+Script 0102 -- Scene_Map, Line: 65:in `update'
+Script 0133 -- Full Script, Line: 1982:in `update'
+Script 0139 -- Hotkeys, Line: 1126:in `update'
+Script 0100 -- Scene_Base, Line: 14:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 04:52:40 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x32c8ed8>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:40 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x94ae454>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:44 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x9305828>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:44 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x94d633c>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:45 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x9467644>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:45 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x927a5ac>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:45 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x94db9e0>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:45 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x930f47c>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:46 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x947fb54>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:47 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x92bbbb0>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:47 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x32c6d68>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:47 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x94e0454>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:47 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x946b988>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:48 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x93249a8>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 04:52:48 -0500
+CRITICAL OBJECT #<Sprite_Highlight:0x92ab468>
+In Scene Scene_Map
+Creation Stack:: 
+Script 0130 -- Sprite_Hl, Line: 181:in `add_highlight_tb'
+Script 0130 -- Sprite_Hl, Line: 191:in `add_highlight'
+Script 0133 -- Full Script, Line: 1611:in `block in add_fertillizer'
+Script 0133 -- Full Script, Line: 1599:in `each'
+Script 0133 -- Full Script, Line: 1599:in `add_fertillizer'
+Script 0133 -- Full Script, Line: 634:in `block in <module:GardenRa>'
+(eval):1:in `call'
+(eval):1:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 1409:in `eval'
+Script 0040 -- Game_Interpreter, Line: 1409:in `command_355'
+Script 0040 -- Game_Interpreter, Line: 196:in `execute_command'
+Script 0040 -- Game_Interpreter, Line: 102:in `run'
+Script 0040 -- Game_Interpreter, Line: 59:in `block in create_fiber'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x952af04>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x952a4f0>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x95299b0>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x952610c>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x95257fc>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x9524f50>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x9524618>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x9523ca4>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x9522f98>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x9522638>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x9521c74>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x9521350>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x9520a18>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x9520158>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x951f780>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'
+-----
+Time: 2016-01-14 05:05:20 -0500
+CRITICAL OBJECT #<Window_SaveFile:0x951eeac>
+In Scene Scene_Save
+Creation Stack:: 
+Script 0110 -- Scene_File, Line: 60:in `block in create_savefile_windows'
+Script 0110 -- Scene_File, Line: 59:in `initialize'
+Script 0110 -- Scene_File, Line: 59:in `new'
+Script 0110 -- Scene_File, Line: 59:in `create_savefile_windows'
+Script 0110 -- Scene_File, Line: 15:in `start'
+Script 0100 -- Scene_Base, Line: 12:in `main'
+Script 0137 -- , Line: 246:in `main'
+Script 0006 -- SceneManager, Line: 22:in `run'
+Script 0141 -- Main, Line: 7:in `block in <main>'
+:1:in `block in rgss_main'
+:1:in `loop'
+:1:in `rgss_main'
+Script 0141 -- Main, Line: 7:in `<main>'
+ruby:in `eval'

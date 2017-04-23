@@ -1,0 +1,114 @@
+\s[21,123456789112345678921234567893123456789412345678951]
+
+
+                   -------------
+                   |  Credits  |
+                   -------------
+
+                \i[1259]\c[6]Project Developer\c[0]
+                --------------------
+              Andi Msp a.k.a Estriole
+
+
+                              \pic[anime_demonio]
+
+                 \c[6]Battle Programmer\c[0]
+                -------------------
+                     Estriole
+                    Enterbrain
+                    Victor Sant
+                      Yanfly
+                    Mr. Bubble
+                       Yami
+
+
+
+                \c[6]Graphic Programmer\c[0]
+                ------------------
+                     Estriole
+                     Moghunter
+                    Victor Sant
+                     LoMastul
+                      Omegas7
+                       Yami
+
+
+                  \c[6]Menu Programmer\c[0]
+                  ---------------
+                     Estriole
+                       NASTY
+                     Moghunter
+                      Yanfly
+
+
+
+                \c[6]Gameplay Programmer\c[0]
+                -------------------
+                     Estriole
+                      Yanfly
+                     Kread-Ex
+                  Modern Algebra
+                    Formar0153
+                     Jet10985
+                       Yami
+                    Mr. Bubble
+
+
+
+                \c[6]Dungeon Programmer\c[0]
+                ------------------
+                     Estriole
+                     Casper667
+                      Omegas7
+                       Yami
+
+
+
+                 \c[6]Debug Programmer\c[0]
+                 ----------------
+                    XS / Nicke
+                     Woratana
+
+
+
+                  \c[6]War Programmer\c[0]
+                  --------------
+                     Estriole
+
+
+
+                     \c[6]Graphics\c[0]
+                     --------
+                     Estriole
+                    Enterbrain
+                      Lunarea
+                       Ying
+                  Ruruga / Gozaru
+                      Archiea
+                      CCRgeek
+                   Cyanyurikago
+                      Erangot
+                 Super Stick Lyon
+                     Celliana
+
+
+
+                       \c[6]Audio\c[0]
+                       -----
+                    Enterbrain
+                      Joerao
+                     Amkrogh89
+
+
+
+                    \c[6]Beta Tester\c[0]
+                    -----------
+                     Arie Msp
+
+
+
+                  \c[6]Special Thanks\c[0]
+                  --------------
+                     Everyone
+
+

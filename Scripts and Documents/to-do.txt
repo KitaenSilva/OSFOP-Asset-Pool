@@ -1,3 +1,0 @@
-Add condition for interacting with pickaxe AFTER interacting with minable obstacle.
-
-
