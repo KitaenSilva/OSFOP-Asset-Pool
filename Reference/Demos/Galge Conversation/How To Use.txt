@@ -1,0 +1,98 @@
+Place the three scripts in the order I've numbered them above Main and under Materials. 
+
+1 - This is the main script. It has the bulk of the processing stuff in it.
+2 - This is a sub script. It makes it so that you can hide the message window completely or open the save screen from within the message.
+3 - This is a sub script. It adds a message log so you can reread messages in case you missed one.
+
+Place all the images in the System folder into your Graphics/System folder. You also need all potraits to go into the Graphics/Pictures folder. Refer to the demo for additional details. 
+
+One thing to note here is that since this system can be used in conjunction with the default message system, I'm going to call this a Conversation system instead of a Message system.
+
+This script is NOT compatible with Yanfly's Ace Message System. I haven't tried any others yet. modern algebra's ATS: Formatting doesn't work with it either, which is sad.
+
+*******
+Full Use
+*******
+
+Full use of the script includes the following elements: 
+
+Character Potrait Positioning
+Speech Balloon
+Windowskin Color
+Namebox
+Emoticons (Balloon Icons)
+
+as well as
+
+Message Logs
+Enter Save Screen from Conversation
+Hide Conversation Window
+
+The latter three are from sub scripts, and the last two can be disabled individually. 
+
+*******
+Setting Up
+*******
+
+To use the script to its fullest extent, you will need to turn switches on and off, as well as tinting and erasing pictures. This is easily done by setting up two common events and calling them before and after each convo, as can be seen in the demo. The first common event, which I labelled Conversation Start, turns on the switches that toggle the Conversation Mode to begin with, Name Display and Speech Balloon Graphic Display. This is also the reason why I distinguish between Conversations and Messages; there's a bloody switch that toggles between the two. These switches can be assigned from within the script; the default IDs are 132, 133 and 134. 
+
+The second common event, which is used for ending a conversation, tints the two character potraits (Which, by default, will take up Pictures ID 10 and 12) dark, turns off the three switches you turned on, then erases them to formally end the conversation. This is all you really have to do to set up the script. This and, of course, have the pictures in your System/Pictures folder. 
+
+You call the first common event before setting up your convo messages, and call the second common event after you're done and want to stop the conversation. 
+
+*******
+Assigning and Using Potraits
+*******
+
+By default, the script uses the actor face you picked to determine the potrait you use. Refer to this grid: 
+
+0 1 2 3
+4 5 6 7
+
+Each face graphic in the Graphics/Faces folder fits that grid. The script looks at the face you choose for your message, adds 1 to it, then searches your Graphics/Pictures folder for the file that matches it. This is the filename it searches for: 
+
+(FaceFilename)_(FaceID+1).png
+
+So for example, you picked Ralph's face. Ralph's face belongs to the file Actor1.png in the Graphics/Faces folder, and it's in the '0' section of the grid. This means the script will look for a potrait named Actor1_1.png in the Graphics/Pictures folder. I hope that makes sense. 
+
+This has many uses, and the most typical way this is used in the gaming industry is to have a bunch of emotions on the characters. Due to the way the system works, it's easy to organize a set of 8 different emotions for each actor you have, and it'll organize them neatly by filename in your Pictures folder. So Actor1_1 will have a neutral Ralph, Actor1_2 will have a bored Ralph, Actor1_3 will have an angry Ralph, so on and so forth. 
+
+Also note that if you select a face ID that doesn't have a corresponding potrait in the Pictures folder (For example, Actor1_8 when you only have 7 potraits), it'll spit an error out at you saying it can't find that image. 
+
+The last bit of configuration comes from the message positioning. If you select 'Top', the potrait appears on the right. If you select 'Bottom', the potrait appears on the left. 'Middle' crashes the game. Be warned. Oh, this does not actually affect the message position. It will ALWAYS appear at the bottom, regardless of your setting. 
+
+*******
+Balloon Icons
+*******
+
+Also known as emoticons. These are easy to use. Just have an event command as usual, but with the target set to Player. They will play over the head of the next character who has a line. This may not be ideal for some (For example, having a character be startled with an exclaimation icon, but having the character who startled him speak next), but it can be dealt with by having ellipsises in that character's message (Such as by having the aforementioned startled character 'say' "...!" while having the emoticon pop up on his head). 
+
+*******
+Speech Balloon Graphic and Windowskin Color
+*******
+
+The speech balloon graphics are the little pointer things over the message box that point at the person speaking so you know who's actually talking at the moment. For the most part, this is automatically handled for you. What it does is get the ID of FaceFilename and searches Graphics/System for the matching files. For example, Actor1 = Balloon1 = Window1. 
+
+This DOES mean that your FaceFilename has to have a unique number at the end of it. For example, Eric1, Natalie2 and so on. If you have Eric1 and Natalie1, both Eric and Natalie will share the same speech balloon graphic and windowskin color. 
+
+The speech balloon graphic is also automatically placed. If your message is positioned at the 'Top' and the character thus appears on the right, the speech balloon graphic is automatically placed so it points towards him. There's no need to worry about this one. 
+
+You can ignore windowskin color changes by changing line 70 in the main script. This will make everyone use the one windowskin and speech balloon graphic, regardless of filename ID. 
+
+*******
+Message Input
+*******
+
+Not much to say here. Messages work like any other, simply type in the message and make sure to preview it to make sure it doesn't go over the boundaries. One thing to keep in mind; if you have the Name Display switch turned on, the messagebox only has three lines for text input. The first line is for name input, and should have the actor's name written in it (Or \n[x]). 
+
+You can also use \i[x] to put icons in the text, where 'x' is the icon ID.
+
+You can also simulate a system message or a message from someone out of view by turning off the Name Display and Speech Balloon Graphic Display switches temporarily, which turns the message box back to four lines as well as defaulting to the Window0 windowskin. 
+
+*******
+End
+*******
+
+And there we go. Any questions, pop me a line. I might not be able to answer it, but I'll do my best and hopefully we can solve it together, or with the help of someone who knows what he's doing. 
+
+Kirin, out. 
